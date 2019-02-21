@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>About Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+  <h2 class="text-center"><b>Team 6</b></h2>
+  <div class="btn-group btn-group-justified">
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary">Jonathan</button>
+      <img src="https://zcoin.io/wp-content/uploads/2017/01/blank-avatar-300x300.png" 
+      	class="img-thumbnail" alt="Photo">
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary">Daisy</button>
+      <img src="https://zcoin.io/wp-content/uploads/2017/01/blank-avatar-300x300.png" 
+      	class="img-thumbnail" alt="Photo">
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary">Kayla</button>
+      <img src="https://zcoin.io/wp-content/uploads/2017/01/blank-avatar-300x300.png" 
+      	class="img-thumbnail" alt="Photo">
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="btn-group btn-group-justified">
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary">Rowvin</button>
+      <img src="https://zcoin.io/wp-content/uploads/2017/01/blank-avatar-300x300.png" 
+      	class="img-thumbnail" alt="Photo">
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary">Minho</button>
+      <img src="https://zcoin.io/wp-content/uploads/2017/01/blank-avatar-300x300.png" 
+      	class="img-thumbnail" alt="Photo">
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary">Rene</button>
+      <img src="https://zcoin.io/wp-content/uploads/2017/01/blank-avatar-300x300.png" 
+      	class="img-thumbnail" alt="Photo">
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
