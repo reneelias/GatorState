@@ -47,4 +47,4 @@ app.get('/marlon', function(req, res) {
     res.sendFile(path.join(__dirname + '/personalPages/marlon.html'));
 });
 
-app.listen(8080);
+app.listen(3000);
