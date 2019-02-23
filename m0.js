@@ -18,6 +18,7 @@ app.get('/rowvin', function(req, res) {
 
 // routed to Jonathan's Profile
 app.get('/jonathan', function(req, res) {
+    //console.log("button was clicked")
     res.sendFile(path.join(__dirname + '/personalPages/jonathan.html'));
 });
 
