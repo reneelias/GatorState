@@ -5,7 +5,7 @@ const hostname = '127.0.0.1'
 const port = 3000
 
 
-// viewed at http://localhost:8080
+// viewed at http://localhost:3000
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
