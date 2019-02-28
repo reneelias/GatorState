@@ -1,66 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>About Page</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-</head>
-<body>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>About Page</title>
+		
+		<style >
+			h1{
+				text-align: center;
 
-<div class="container-fluid">
-  <h2 class="text-center"><b>Team 6</b></h2>
-  <div class="btn-group btn-group-justified">
-    <!-- Jonathan -->
-    <div class="btn-group">
-      <a href="../jonathan"><button type="button" id="Jonathan" class="btn btn-primary">Jonathan</button></a>
-      <img src="https://i.imgur.com/zYnOLsV.jpg" 
-      	class="img-thumbnail" alt="Photo">
-    </div>
-    <!-- Daisy -->
-    <div class="btn-group">
-      <a href="../daisy"><button type="button" id="Daisy" class="btn btn-primary">Daisy</button></a>
-      <img src="https://user-images.githubusercontent.com/25631925/53280177-2300e400-36cc-11e9-93c1-410b03231ccb.png" 
-      	class="img-thumbnail" alt="Photo">
-    </div>
-    <!-- Kayla -->
-    <div class="btn-group">
-      <a href="../kayla"><button type="button" id="Kayla" class="btn btn-primary">Kayla</button></a>
-      <img src="https://avatars0.githubusercontent.com/u/28065363?s=400" 
-      	width="500" height="500" class="img-thumbnail" alt="Photo">
-    </div>
-  </div>
+			}
+			* {
+				box-sizing: border-box;
+			}
+			.img{
+				width: 33%;
+				height: auto
+			}
+			.column{
+				float: left;
+				width: 33%;
+				padding: 10px; 
+			}
+			div.desc{
+				padding: 15px;
+				text-align: center;
+			}
+			div.gallery img{
+				border: 1px solid;
+				width: 100%;
+				height: auto;
+			}
+			div.column{
+				outline: bold;
+			}
+			.button {
+				
+				background-color: Green;
+				border: none;
+				color: white;
+				padding: 15px 32px;
+				text-align: center;
+				text-decoration: none;
+				font-size: 18px;
+				justify-content: center;
+				display: flex;
+			}
+			.button:hover{
+				background-color: #004d00;
+				text-decoration:underline;
+			}
+			.button:active{
+				box-shadow: 0 5px #666;
+				transform: translateY(4px);
+			}
 
-  <div class="btn-group btn-group-justified">
-    <!-- Rowvin -->
-    <div class="btn-group">
-      <a href="../rowvin"><button type="button" class="btn btn-primary">Rowvin</button></a>
-      <img src="https://avatars1.githubusercontent.com/u/7840167?s=400&v=3" 
-        class="img-thumbnail" alt="Photo">
-    </div>
-    <!-- Minho -->
-    <div class="btn-group">
-      <a href="../minho"><button type="button" id="Minho" class="btn btn-primary">Minho</button></a>
-      <img src="https://avatars2.githubusercontent.com/u/17245555?v=3&s=400"
-        class="img-thumbnail" alt="Photo">
-    </div>
-    <!-- Rene -->
-    <div class="btn-group">
-      <a href="../rene"><button type="button" class="btn btn-primary">Rene</button></a>
-      <img src="https://avatars2.githubusercontent.com/u/7273788?s=460&v=4" 
-        class="img-thumbnail" alt="Photo">
-    </div>
-    <!-- Marlon -->
-    <div class="btn-group">
-      <a href="../marlon"><button type="button" class="btn btn-primary">Marlon</button></a>
-      <img src="https://avatars2.githubusercontent.com/u/5723692?s=460&v=4" 
-        class="img-thumbnail" alt="Photo">
-    </div>
-  </div>
-</div>
+			@media screen and (max-width:800px){
+				.column{
+					width: 50%;
+				}
+			}
+			@media screen and (max-width:600px){
+				.column{
+					width: 100%;
+				}
+			}
+		</style>
+		<script >
+			
+		</script>
+	</head>
 
-<script src="function.js">
-</script>
-</body>
+	<body>
+		<h1>Team 06</h1>
+		<div class ="row">
+			<!--Jonathan-->
+			<div class="column">
+				<a href="../jonathan" class = "button">Jonathan</a>
+					<div class = "gallery">
+						<img src="https://i.imgur.com/zYnOLsV.jpg" alt="Image of Jonathan">
+					</div>
+			</div>
+			<!--Daisy-->
+			<div class="column">
+				<a href="../daisy" class = "button">Daisy</a>
+					<div class = "gallery">
+						<img src="https://user-images.githubusercontent.com/25631925/53280177-2300e400-36cc-11e9-93c1-410b03231ccb.png" alt="Image of Daisy">
+					</div>
+			</div>
+			<!--Kayla-->
+			<div class="column">
+				<a href="../kayla" class = "button">Kayla</a>
+					<div class = "gallery">
+						<img src="https://avatars0.githubusercontent.com/u/28065363?s=400" alt="Image of Kayla">
+					</div>
+			</div>
+		</div>
+		<!--Rowvin-->
+		<div class ="row">
+			<div class="column">
+				<a href="../rowvin" class = "button">Rowvin</a>
+					<div class = "gallery">
+						<img src="https://avatars1.githubusercontent.com/u/7840167?s=400&v=3" alt="Image of Rowvin">
+					</div>
+			</div>
+			<!--Minho-->
+			<div class="column">
+				<a href="../minho" class = "button">Minho</a>
+					<div class = "gallery">
+						<img src="https://avatars2.githubusercontent.com/u/17245555?v=3&s=400" alt="Image of Minho">
+					</div>
+			</div>
+			<!--Rene-->
+			<div class="column">
+				<a href="../rene" class = "button">Rene</a>
+					<div class = "gallery">
+						<img src="https://avatars2.githubusercontent.com/u/7273788?s=460&v=4" alt="Image of Rene">
+					</div>
+			</div>
+		</div>
+		
+		<div class ="row">
+			<!--Marlon-->
+			<div class="column">
+				<a href="../marlon" class = "button">Marlon</a>
+					<div class = "gallery">
+						<img src="https://avatars2.githubusercontent.com/u/5723692?s=460&v=4" alt="Image of Marlon">
+					</div>
+			</div>
+		</div>	
+	</body>
+</html>
