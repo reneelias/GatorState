@@ -7,15 +7,16 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
     </head>
     <body>
         <section>
             <div class="container mt-3">
                 <h2>Vertical Prototype</h2>
-                <p>Search for an address and select what type of building you want to see.</p
->                <form action="#" method="post" novalidate>
+				<p>Search for an address and select what type of building you want to see.</p>                
+				<form action="/search" method="get" novalidate>
                         <input type="text" name="search" placeholder="Search">
-                        <select>
+                        <select name="filter">
                             <option selected>Filter</option>
                             <option value="Apartment">Apartment</option>
                             <option value="House">House</option>
