@@ -14,7 +14,7 @@ app.get('/', function(req, res) {
 //  About Page Redirect
 */
 app.get('/about', function(req, res) {
-    res.sendFile(path.join(__dirname + '/About.html'));
+    res.sendFile(path.join(__dirname + '/about.html'));
 });
 
 /* 
@@ -25,6 +25,7 @@ app.get('/about', function(req, res) {
 app.get('/rowvin', function(req, res) {
     res.sendFile(path.join(__dirname + '/personalPages/Rowvin.html'));
 });
+
 
 // routed to Jonathan's Profile
 app.get('/Jonathan', function(req, res) {
