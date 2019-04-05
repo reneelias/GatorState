@@ -16,7 +16,7 @@ const hostname = '127.0.0.1'
 const port = 3000
 
 // PostgresQL
-const db = require('./queries');
+const db = require('./components/queries/queries');
 
 /* MAIN LOGIC HERE
 // ---------------
@@ -31,6 +31,8 @@ app.use(
   })
 )
 
+//app.use(express.static(__dirname + '/components'));
+
 // viewed at http://localhost:3000
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
@@ -40,16 +42,17 @@ app.get('/', function(req, res) {
 //  About Page Redirect
 */
 app.get('/about', function(req, res) {
-    res.sendFile(path.join(__dirname + '/about.html'));
+    res.sendFile(path.join(__dirname + '/components/about/about.html'));
 });
 
 app.get('/users', db.getUsers);
+app.get('/listings', db.getListings);
 
 /*
 //  Search Page Redirect
 */
 app.get('/search', function(req, res) {
-    res.sendFile(path.join(__dirname + '/search.html'));
+    res.sendFile(path.join(__dirname + '/components/search/search.html'));
     // console.log(db.getUsers()); 
 });
 
@@ -59,39 +62,39 @@ app.get('/search', function(req, res) {
 
 // routed to Rowvin's Profile
 app.get('/rowvin', function(req, res) {
-    res.sendFile(path.join(__dirname + '/personalPages/Rowvin.html'));
+    res.sendFile(path.join(__dirname + '/components/about/personalPages/Rowvin.html'));
 });
 
 
 // routed to Jonathan's Profile
 app.get('/Jonathan', function(req, res) {
     //console.log("button was clicked")
-    res.sendFile(path.join(__dirname + '/personalPages/Jonathan.html'));
+    res.sendFile(path.join(__dirname + '/components/about/personalPages/Jonathan.html'));
 });
 
 // routed to Kayla's Profile
 app.get('/Kayla', function(req, res) {
-    res.sendFile(path.join(__dirname + '/personalPages/Kayla.html'));
+    res.sendFile(path.join(__dirname + '/components/about/personalPages/Kayla.html'));
 });
 
 // routed to Daisy's Profile
 app.get('/Daisy', function(req, res) {
-    res.sendFile(path.join(__dirname + '/personalPages/Daisy.html'));
+    res.sendFile(path.join(__dirname + '/components/about/personalPages/Daisy.html'));
 });
 
 // routed to Minho's Profile
 app.get('/Minho', function(req, res) {
-    res.sendFile(path.join(__dirname + '/personalPages/Minho.html'));
+    res.sendFile(path.join(__dirname + '/components/about/personalPages/Minho.html'));
 });
 
 // routed to Rene's Profile
 app.get('/Rene', function(req, res) {
-    res.sendFile(path.join(__dirname + '/personalPages/Rene.html'));
+    res.sendFile(path.join(__dirname + '/components/about/personalPages/Rene.html'));
 });
 
 // routed to Marlon's Profile
 app.get('/Marlon', function(req, res) {
-    res.sendFile(path.join(__dirname + '/personalPages/Marlon.html'));
+    res.sendFile(path.join(__dirname + '/components/about/personalPages/Marlon.html'));
 });
 
 

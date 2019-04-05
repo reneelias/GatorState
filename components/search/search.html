@@ -9,7 +9,7 @@
     <script src="https://raw.githubusercontent.com/commandprompt/postgres-js/master/lib/postgres-pure.js" type="text/javascript"></script>
     <script src="https://raw.githubusercontent.com/commandprompt/postgres-js/master/lib/results.js" type="text/javascript"></script>
     <script src="https://raw.githubusercontent.com/commandprompt/postgres-js/master/lib/type-oids.js" type="text/javascript"></script> -->
-    <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js" type="text/javascript"></script>
+
 <script>
     window.onload = function(){
         url = new URL(window.location.href);
@@ -23,8 +23,8 @@
 
         // var path = require(['path']);
         // var queries = require([path.resolve( __dirname, "./queries.js" )]);
-        // var queries = require(['./server.js']);
-        // var users = queries.db.getUsers();
+        // var queries = require(['./queries.js']);
+        // var users = getUsers();
     }
 </script>
 </head>
@@ -36,6 +36,8 @@
     <div id="filter">
 
         </div>
+        <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js" type="text/javascript"></script>
+        <script src="/components/queries/queries.js" type="text/javascript"></script>
 </body>
 
 </html>
