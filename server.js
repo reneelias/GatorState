@@ -10,6 +10,13 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
+/*
+//  About Page Redirect
+*/
+app.get('/about', function(req, res) {
+    res.sendFile(path.join(__dirname + '/About.html'));
+});
+
 /* 
 //	PERSONAL PAGES ROUTES 
 */
