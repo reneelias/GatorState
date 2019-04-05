@@ -31,7 +31,7 @@ app.use(
   })
 )
 
-//app.use(express.static(__dirname + '/components'));
+app.use(express.static(__dirname + '/components'));
 
 // viewed at http://localhost:3000
 app.get('/', function(req, res) {
@@ -57,7 +57,8 @@ app.get('/search', function(req, res) {
 });
 
 /* 
-//	PERSONAL PAGES ROUTES 
+//	PERSONAL PAGES ROUTES
+//  WE COULD POTENTIALLY GET RID OF THESE 
 */
 
 // routed to Rowvin's Profile
