@@ -43,11 +43,14 @@ app.get('/about', function(req, res) {
     res.sendFile(path.join(__dirname + '/about.html'));
 });
 
+app.get('/users', db.getUsers);
+
 /*
 //  Search Page Redirect
 */
 app.get('/search', function(req, res) {
     res.sendFile(path.join(__dirname + '/search.html'));
+    // console.log(db.getUsers()); 
 });
 
 /* 

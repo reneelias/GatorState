@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://raw.githubusercontent.com/commandprompt/postgres-js/master/lib/buffer_extras.js" type="text/javascript"></script>
+    <!-- <script src="https://raw.githubusercontent.com/commandprompt/postgres-js/master/lib/buffer_extras.js" type="text/javascript"></script>
     <script src="https://raw.githubusercontent.com/commandprompt/postgres-js/master/lib/md5.js" type="text/javascript"></script>
     <script src="https://raw.githubusercontent.com/commandprompt/postgres-js/master/lib/parsers.js" type="text/javascript"></script>
     <script src="https://raw.githubusercontent.com/commandprompt/postgres-js/master/lib/postgres-pure.js" type="text/javascript"></script>
     <script src="https://raw.githubusercontent.com/commandprompt/postgres-js/master/lib/results.js" type="text/javascript"></script>
-    <script src="https://raw.githubusercontent.com/commandprompt/postgres-js/master/lib/type-oids.js" type="text/javascript"></script>
+    <script src="https://raw.githubusercontent.com/commandprompt/postgres-js/master/lib/type-oids.js" type="text/javascript"></script> -->
     <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js" type="text/javascript"></script>
 <script>
     window.onload = function(){
@@ -21,21 +21,10 @@
         document.getElementById("zipcode").innerHTML = "Zipcode: " + zip;
         document.getElementById("filter").innerHTML = "Filter: " + filter;
 
-        var sys = require(["sys"]);
-        var pg = require(["postgres-pure"]);
-
-        var db = new pg.connect("pgsql://postgres:T3am06S19p0st!@csc648team06server/35.236.74.85:5432/postgres");
-        db.query("SELECT * FROM listings", function (data) {
-            console.log(data);
-        });
-        db.close();
-
-        // var pg = require(['pg']);
-        // var connectionString = "postgres://postgres:T3am06S19p0st!@csc648team06server/35.236.74.85:5432/postgres";
-        // var pgClient = new pg.pgClient(connectionString);
-        // pgClient.connect();
-        // var query = pgClient.query("SELECT street_address FROM listings WHERE zip_code = 94132");
-        // console.log(query[0]["street_address"]);
+        // var path = require(['path']);
+        // var queries = require([path.resolve( __dirname, "./queries.js" )]);
+        // var queries = require(['./server.js']);
+        // var users = queries.db.getUsers();
     }
 </script>
 </head>
