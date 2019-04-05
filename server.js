@@ -1,9 +1,35 @@
+/* SETUP HERE
+// ---------------
+// This section will setup all dependencies and variables required to run the server.
+*/
+
+// Express
 const express = require('express');
 const app = express();
+
+// BodyParser
+const bodyParser = require('body-parser')
+
+// Server info
 const path = require('path');
 const hostname = '127.0.0.1'
 const port = 3000
 
+// PostgresQL
+const db = require('./queries');
+
+/* MAIN LOGIC HERE
+// ---------------
+// This section will serve all the main function and attributes we'll use in the server
+*/
+
+// bodyParser logic
+app.use(bodyParser.json())
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+)
 
 // viewed at http://localhost:3000
 app.get('/', function(req, res) {
