@@ -1,53 +1,111 @@
+/* SETUP HERE
+// ---------------
+// This section will setup all dependencies and variables required to run the server.
+*/
+
+// Express
 const express = require('express');
 const app = express();
+
+app.set('view engine', 'ejs');
+
+// BodyParser
+const bodyParser = require('body-parser')
+
+// Server info
 const path = require('path');
 const hostname = '127.0.0.1'
 const port = 3000
 
+// PostgresQL
+const db = require('./components/queries/queries');
+
+
+/* MAIN LOGIC HERE
+// ---------------
+// This section will serve all the main function and attributes we'll use in the server
+*/
+
+// bodyParser logic
+app.use(bodyParser.json())
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+)
+
+//app.use(express.static(__dirname + '/components'));
 
 // viewed at http://localhost:3000
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
+/*
+//  About Page Redirect
+*/
+app.get('/about', function(req, res) {
+    res.sendFile(path.join(__dirname + '/components/about/about.html'));
+});
+
+app.get('/users', db.getUsers);
+app.get('/listings/:zipcode/:filter', db.getListings);
+// app.get('/listings', db.getListingsfun('94132', 'dorm'));
+
+
+/*
+//  Search Page Redirect
+*/
+app.get('/search', function(req, res) {
+    //res.send(db.getListings);
+    // res.set('yo', 'yo');
+    
+    res.redirect(`/listings/${req.query.search}/${req.query.filter.toLowerCase()}`);
+    //res.render('search', {search: req.query.search, filter: req.query.filter, listingsInfo: listings});
+    // console.log(JSON.stringify(db.getListings));
+    //res.sendFile(path.join(__dirname + '/components/search/search.html'));
+});
+
 /* 
-//	PERSONAL PAGES ROUTES 
+//	PERSONAL PAGES ROUTES
+//  WE COULD POTENTIALLY GET RID OF THESE 
 */
 
 // routed to Rowvin's Profile
 app.get('/rowvin', function(req, res) {
-    res.sendFile(path.join(__dirname + '/personalPages/Rowvin.html'));
+    res.sendFile(path.join(__dirname + '/components/about/personalPages/Rowvin.html'));
 });
+
 
 // routed to Jonathan's Profile
 app.get('/Jonathan', function(req, res) {
     //console.log("button was clicked")
-    res.sendFile(path.join(__dirname + '/personalPages/Jonathan.html'));
+    res.sendFile(path.join(__dirname + '/components/about/personalPages/Jonathan.html'));
 });
 
 // routed to Kayla's Profile
 app.get('/Kayla', function(req, res) {
-    res.sendFile(path.join(__dirname + '/personalPages/Kayla.html'));
+    res.sendFile(path.join(__dirname + '/components/about/personalPages/Kayla.html'));
 });
 
 // routed to Daisy's Profile
 app.get('/Daisy', function(req, res) {
-    res.sendFile(path.join(__dirname + '/personalPages/Daisy.html'));
+    res.sendFile(path.join(__dirname + '/components/about/personalPages/Daisy.html'));
 });
 
 // routed to Minho's Profile
 app.get('/Minho', function(req, res) {
-    res.sendFile(path.join(__dirname + '/personalPages/Minho.html'));
+    res.sendFile(path.join(__dirname + '/components/about/personalPages/Minho.html'));
 });
 
 // routed to Rene's Profile
 app.get('/Rene', function(req, res) {
-    res.sendFile(path.join(__dirname + '/personalPages/Rene.html'));
+    res.sendFile(path.join(__dirname + '/components/about/personalPages/Rene.html'));
 });
 
 // routed to Marlon's Profile
 app.get('/Marlon', function(req, res) {
-    res.sendFile(path.join(__dirname + '/personalPages/Marlon.html'));
+    res.sendFile(path.join(__dirname + '/components/about/personalPages/Marlon.html'));
 });
 
 
