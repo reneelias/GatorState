@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script>
+
+        window.onload = function () {
+            // url = new URL(window.location.href);
+            // var zip = url.searchParams.get("search");
+            // var filter = url.searchParams.get("filter");
+
+
+           // document.getElementById("zipcode").innerHTML = "Zipcode: " + zip;
+            //document.getElementById("filter").innerHTML = "Filter: " + filter;
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="zipcode">
+            <%= search %>
+    </div>
+    <div id="filter">
+            <%= filter %>
+    </div>
+    <div>
+        <b></b><%= listingsInfo %>
+    </div>
+</body>
+
+</html>

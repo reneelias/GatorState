@@ -7,6 +7,8 @@
 const express = require('express');
 const app = express();
 
+app.set('view engine', 'ejs');
+
 // BodyParser
 const bodyParser = require('body-parser')
 
@@ -17,6 +19,7 @@ const port = 3000
 
 // PostgresQL
 const db = require('./components/queries/queries');
+
 
 /* MAIN LOGIC HERE
 // ---------------
@@ -31,7 +34,7 @@ app.use(
   })
 )
 
-app.use(express.static(__dirname + '/components'));
+//app.use(express.static(__dirname + '/components'));
 
 // viewed at http://localhost:3000
 app.get('/', function(req, res) {
@@ -46,14 +49,21 @@ app.get('/about', function(req, res) {
 });
 
 app.get('/users', db.getUsers);
-app.get('/listings', db.getListings);
+app.get('/listings/:zipcode/:filter', db.getListings);
+// app.get('/listings', db.getListingsfun('94132', 'dorm'));
+
 
 /*
 //  Search Page Redirect
 */
 app.get('/search', function(req, res) {
-    res.sendFile(path.join(__dirname + '/components/search/search.html'));
-    // console.log(db.getUsers()); 
+    //res.send(db.getListings);
+    // res.set('yo', 'yo');
+    
+    res.redirect(`/listings/${req.query.search}/${req.query.filter.toLowerCase()}`);
+    //res.render('search', {search: req.query.search, filter: req.query.filter, listingsInfo: listings});
+    // console.log(JSON.stringify(db.getListings));
+    //res.sendFile(path.join(__dirname + '/components/search/search.html'));
 });
 
 /* 
