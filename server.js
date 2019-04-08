@@ -50,6 +50,8 @@ app.get('/about', function(req, res) {
 
 app.get('/users', db.getUsers);
 app.get('/listings/:zipcode/:filter', db.getListings);
+app.get('/listingsZip/:zipcode', db.getZipListings);
+app.get('/listingsFilter/:filter', db.getHouseTypeListings);
 app.get('/listings', db.getAllListings);
 // app.get('/listings', db.getListingsfun('94132', 'dorm'));
 

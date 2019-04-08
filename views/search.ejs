@@ -29,6 +29,13 @@
                 if (zip == "" && filter == "") {
                     jsonURL = `http://localhost:3000/listings`;
                 }
+                else if(zip != "" && filter == ""){
+                    jsonURL = `http://localhost:3000/listingsZip/${zip}`
+                }
+                else if(zip == "" && filter != ""){
+                    filter = filter.toLowerCase();
+                    jsonURL = `http://localhost:3000/listingsFilter/${filter}/`;
+                }
                 else {
                     filter = filter.toLowerCase();
                     jsonURL = `http://localhost:3000/listings/${zip}/${filter}/`;

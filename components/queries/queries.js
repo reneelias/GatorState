@@ -60,8 +60,30 @@ const getAllListings = (request, response) => {
 	})
 }
 
+const getZipListings = (request, response) => {
+	const zipcode = parseInt(request.params.zipcode);
+	pool.query(`SELECT street_address, city, zip_code, state, images, home_type, price FROM listings WHERE zip_code = '${zipcode}'`, (error, results) => {
+		if (error) {
+		throw error
+		}
+		response.status(200).json(results.rows)
+	})
+}
+
+const getHouseTypeListings = (request, response) => {
+	const filter = request.params.filter;
+	pool.query(`SELECT street_address, city, zip_code, state, images, home_type, price FROM listings WHERE home_type = '${filter}'`, (error, results) => {
+		if (error) {
+		throw error
+		}
+		response.status(200).json(results.rows)
+	})
+}
+
 module.exports = {
 	getUsers,
 	getListings,
 	getAllListings,
+	getZipListings,
+	getHouseTypeListings,
 }
