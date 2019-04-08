@@ -51,16 +51,17 @@ const getListings = (request, response) => {
 	})
 }
 
-// const getListings = (request, response) => {
-// 	pool.query('SELECT * FROM listings ORDER BY user_id ASC', (error, results) => {
-// 		if (error) {
-// 		throw error
-// 		}
-// 		response.status(200).json(results.rows)
-// 	})
-// }
+const getAllListings = (request, response) => {
+	pool.query('SELECT street_address, city, zip_code, state, images, home_type, price FROM listings', (error, results) => {
+		if (error) {
+		throw error
+		}
+		response.status(200).json(results.rows)
+	})
+}
 
 module.exports = {
 	getUsers,
 	getListings,
+	getAllListings,
 }

@@ -50,6 +50,7 @@ app.get('/about', function(req, res) {
 
 app.get('/users', db.getUsers);
 app.get('/listings/:zipcode/:filter', db.getListings);
+app.get('/listings', db.getAllListings);
 // app.get('/listings', db.getListingsfun('94132', 'dorm'));
 
 
@@ -59,9 +60,9 @@ app.get('/listings/:zipcode/:filter', db.getListings);
 app.get('/search', function(req, res) {
     //res.send(db.getListings);
     // res.set('yo', 'yo');
-    
-    res.redirect(`/listings/${req.query.search}/${req.query.filter.toLowerCase()}`);
-    //res.render('search', {search: req.query.search, filter: req.query.filter, listingsInfo: listings});
+    //res.redirect(`/listings/${req.query.search}/${req.query.filter.toLowerCase()}`);
+    listings = 'WADDUP';
+    res.render('search', {search: req.query.search, filter: req.query.filter, listingsInfo: listings});
     // console.log(JSON.stringify(db.getListings));
     //res.sendFile(path.join(__dirname + '/components/search/search.html'));
 });
