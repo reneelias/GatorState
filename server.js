@@ -48,22 +48,18 @@ app.get('/about', function(req, res) {
     res.sendFile(path.join(__dirname + '/components/about/about.html'));
 });
 
-app.get('/users', db.getUsers);
-app.get('/listings/:zipcode/:filter', db.getListings);
-// app.get('/listings', db.getListingsfun('94132', 'dorm'));
+app.get('/listings/:search/:filter', db.getLikeListingsFilter);
+app.get('/listingsSearch/:search', db.getLikeListingsNoFilter);
+app.get('/listingsFilter/:filter', db.getHouseTypeListings);
+app.get('/listings', db.getAllListings);
 
 
 /*
 //  Search Page Redirect
 */
 app.get('/search', function(req, res) {
-    //res.send(db.getListings);
-    // res.set('yo', 'yo');
-    
-    res.redirect(`/listings/${req.query.search}/${req.query.filter.toLowerCase()}`);
-    //res.render('search', {search: req.query.search, filter: req.query.filter, listingsInfo: listings});
-    // console.log(JSON.stringify(db.getListings));
-    //res.sendFile(path.join(__dirname + '/components/search/search.html'));
+    listings = 'WADDUP';
+    res.render('search', {search: req.query.search, filter: req.query.filter, listingsInfo: listings});
 });
 
 /* 
