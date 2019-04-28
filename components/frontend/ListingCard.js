@@ -1,25 +1,23 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-
 
 export class ListingCard extends Component {
     render() {
         return (
-                <Card border="secondary" style={itemStyle}>
-                    <Card.Img variant="top"src={this.props.todo.imgurl} />
-                    <Card.Body>
-                        <Card.Title>
-                            Address: {this.props.todo.address}
-                        </Card.Title>
-                        <Card.Text>
-                            Price: {this.props.todo.price}
-                            Distance: {this.props.todo.distance} miles
-                        </Card.Text>
-                        <Button variant="primary">View Listing</Button>
-                    </Card.Body>
-                </Card>
+        <Container >
+            <Card className= "flex-row flex-wrap ">
+                <Card.Header className="card-header border-0">
+                    <img src="//placehold.it/200" alt="" />
+                </Card.Header>
+                <Card.Body>
+                    <Card.Title>Address</Card.Title>
+                    <h3>{this.props.todo.price}</h3>
+                    <h4>Miles from SFSU: {this.props.todo.distance}</h4>
+                </Card.Body>
+            </ Card>
+        </ Container>
         );
     }
 }
@@ -27,10 +25,5 @@ export class ListingCard extends Component {
 //PropTypes
 ListingCard.propTypes = {
     todo: PropTypes.object.isRequired
-}
-
-const itemStyle = {
-    backgroundColor: 'white',
-    width: '18rem'
-}
+};
 export default ListingCard;
