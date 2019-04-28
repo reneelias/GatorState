@@ -15,7 +15,7 @@ const bodyParser = require('body-parser')
 // Server info
 const path = require('path');
 const hostname = '127.0.0.1'
-const port = 3000
+const port = 3001
 
 // PostgresQL
 const db = require('./components/queries/queries');
@@ -103,8 +103,6 @@ app.get('/Rene', function(req, res) {
 app.get('/Marlon', function(req, res) {
     res.sendFile(path.join(__dirname + '/components/about/personalPages/Marlon.html'));
 });
-
-
 
 
 // so we can just click on the server link
