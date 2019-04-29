@@ -8,6 +8,7 @@ import Container from 'react-bootstrap/Container';
 
 class Listing extends Component {
     state = {
+        searchInput: "",
         todos: [
           {
             id: 1,
@@ -39,6 +40,7 @@ class Listing extends Component {
 //the info and displays them in a card
 //
   render() {
+    console.log(this.state);
       let listingCards = this.state.todos.map(todo => {
         return (
             <Col>
