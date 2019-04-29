@@ -1,39 +1,56 @@
-import React from 'react';
-<<<<<<< HEAD
-import ListingCard from '../frontend/ListingCard'
-import Listing from '../frontend/Listing'
-=======
+import React, {Component} from 'react';
 import Listing from '../frontend/Listing';
 import NavbarResultPage from '../frontend/NavbarResultPage'
->>>>>>> e86fd37b4365e1cacc1512ede292b5e4c6be593d
 import { connect } from 'react-redux';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 
+import {
+  updateSearch,
+} from '../redux/actions/searchActions';    
 
+class About extends Component {
+    state = {
+        "searchInput": "",
+    }
 
-const About = ({props}) => {
+    render() {
+        console.log(this.props.searchInput)
+        return (
+            <div>
+                <h2>About</h2>
+                {this.props.searchValue}
+                <Listing/>
+            </div>
+        );
+    }
+}
+
+// const About = (searchValue) => {
     
-    return (
+    // return (
         
-        <div>
-<<<<<<< HEAD
-            <h2>About</h2>
-            <Listing/>
-=======
-            <NavbarResultPage />
-            <Container fluid>
-                <Row>
-                    <Col></Col>
-                    <Col >
-                        <Listing />
-                    </Col>
-                </Row>
-            </Container>
->>>>>>> e86fd37b4365e1cacc1512ede292b5e4c6be593d
-        </div>
-    );
-};
+    //     <div>
+    //         <h2>About</h2>
+    //         {searchValue.value}
+    //         <Listing/>
+    //     </div>
+    // );
+// };
 
-export default About;
+const mapStateToProps = (state) => {
+    // console.log(state);
+    return{
+      searchValue: state.searchReducer.searchValue,
+    };
+  };
+  
+  const mapDispatchToProps = {
+    updateSearch,
+  };
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps,
+)(About);
