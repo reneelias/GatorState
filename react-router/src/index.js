@@ -1,8 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './client/Root';
-//import registerServiceWorker from './registerServiceWorker';
 import './index.css';
+import App from './App';
+//import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<Root />, document.getElementById('root'));
+import { Provider } from 'react-redux';
+import { createStore, combineReducers } from 'redux';
+import searchReducer from './redux/reducers/searchReducer'
+
+
+import * as serviceWorker from './serviceWorker';
+const rootReducer = combineReducers({
+    searchReducer,
+});
+
+const store = createStore(rootReducer);
+window.store = store;
+
+ReactDOM.render(
+<Provider store={store}>
+<App />
+</Provider>
+, document.getElementById('root'));
 //registerServiceWorker();
+serviceWorker.unregister();

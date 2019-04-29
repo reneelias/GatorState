@@ -5,12 +5,12 @@ You can connect to Redux later by using 'Provider' in here.
 
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import App from 'shared/App';
+import App from '../App';
 
 const Root = () => (
-    <BrowserRouter>
+    // <BrowserRouter>
         <App/>
-    </BrowserRouter>
+    // </BrowserRouter>
 );
 
 export default Root;

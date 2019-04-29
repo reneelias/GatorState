@@ -5,12 +5,16 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 import FormControl from 'react-bootstrap/FormControl';
 
-import {BrowserRouter,Link, Route} from 'react-router-dom';
-
+import {Link} from 'react-router-dom';
+import {withRouter} from 'react-router';
 import Filter from './Filter';
 
-class Search extends Component {
+import { connect } from 'react-redux';
+import {
+  updateSearch,
+} from '../redux/actions/searchActions';
 
+class Search extends Component {
   state = {
     "searchInput": ""
     // {
@@ -35,11 +39,13 @@ class Search extends Component {
 
   }
 
-  onSearchButtonClick = event => {
-    const {searchInput} = this.state;
-    
-  }
-
+  // onSearchButtonClick = event => {
+  //   const {searchInput} = this.state;
+  //   this.setState({
+  //     "searchInput" : event.target.value
+  //   })
+  //   updateSearch(searchInput);
+  // }
 
   render(){
   const {searchInput} = this.state  
@@ -48,7 +54,7 @@ class Search extends Component {
     <div className="App">
       <Jumbotron>
         <Container>
-            <h1>Gator State</h1>
+            <h1>Gator State {this.props.searchValue}</h1>
             <p>
             Find your home away from home
             </p>
@@ -56,11 +62,16 @@ class Search extends Component {
                 <InputGroup className="mb-3">
                     <FormControl 
                     placeholder= "Search by address, zipcode, or city"
-                    onChange={this.onSearchHandler}
+                    // onChange={this.onSearchHandler}
+                    onChange={(e) => {
+                      this.props.updateSearch(e.target.value);
+                    }}
                     //value={searchInput}
                     />
                     <InputGroup.Append>
-                        <Button  variant="outline-primary"><Link to="/about">Search</Link></Button>
+                        {/* <Button variant="outline-primary"><Link to={{pathname:"/about", searchValue: searchInput}}>Search</Link></Button> */}
+                        {/* <Button onClick={this.onSearchButtonClick} variant="outline-primary"><Link to="/about">Search</Link></Button> */}
+                        <Button variant="outline-primary"><Link to="/about">Search</Link></Button>
                     </InputGroup.Append>
                 </InputGroup>
                 <Filter/>
@@ -72,5 +83,22 @@ class Search extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  console.log(state);
+  return{
+    searchValue: state.searchReducer.searchValue,
+  };
+};
 
-export default Search;
+const mapDispatchToProps = {
+  updateSearch,
+};
+// function searchButtonClick()  {
+//   const {searchInput} = this.state;
+//   this.props.router.push('/about');
+// }
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Search);
