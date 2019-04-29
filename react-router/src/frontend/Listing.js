@@ -41,13 +41,13 @@ class Listing extends Component {
   render() {
       let listingCards = this.state.todos.map(todo => {
         return (
-            <Col sm="3">
+            <Col>
                 <ListingCard key = {todo.id} todo = {todo}/>
             </Col>
         )
       })
     return (
-        <Container fluid>
+        <Container>
             <Row>
                 {listingCards}
             </Row>
