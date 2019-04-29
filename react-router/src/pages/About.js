@@ -1,6 +1,5 @@
 import React from 'react';
 import ListingCard from '../frontend/ListingCard'
-import Listing from '../frontend/Listing'
 import Listing from '../frontend/Listing';
 import NavbarResultPage from '../frontend/NavbarResultPage'
 import { connect } from 'react-redux';
