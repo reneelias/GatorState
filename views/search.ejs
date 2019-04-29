@@ -27,17 +27,17 @@
                 var jsonURL;
                 //debugger
                 if (search == "" && filter == "") {
-                    jsonURL = `http://localhost:3000/listings`;
+                    jsonURL = `http://localhost:3001/listings`;
                 }
                 else if(search != "" && filter == ""){
                     // debugger
-                    jsonURL = `http://localhost:3000/listingsSearch/${search}`
+                    jsonURL = `http://localhost:3001/listingsSearch/${search}`
                 }
                 else if(search == "" && filter != ""){
-                    jsonURL = `http://localhost:3000/listingsFilter/${filter}/`;
+                    jsonURL = `http://localhost:3001/listingsFilter/${filter}/`;
                 }
                 else {
-                    jsonURL = `http://localhost:3000/listings/${search}/${filter}/`;
+                    jsonURL = `http://localhost:3001/listings/${search}/${filter}/`;
                 }
                 //debugger
                 $.getJSON(jsonURL, function (result) {
