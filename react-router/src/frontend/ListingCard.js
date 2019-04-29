@@ -7,8 +7,8 @@ export class ListingCard extends Component {
     render() {
         return (
         <Container >
-            <Card className= "flex-row flex-wrap ">
-                <Card.Header className="card-header border-0">
+            <Card className= "flex-row flex-wrap border style={cardStyle} ">
+                <Card.Header>
                     <img src="//placehold.it/200" alt="" />
                 </Card.Header>
                 <Card.Body>
@@ -25,6 +25,10 @@ export class ListingCard extends Component {
     }
 }
 
+const cardStyle = {
+    width: '800px',
+    background: 'grey',
+}
 //PropTypes
 ListingCard.propTypes = {
     todo: PropTypes.object.isRequired
