@@ -5,14 +5,16 @@ import Card from 'react-bootstrap/Card';
 import searchReducer from '../redux/reducers/searchReducer';
 export class ListingCard extends Component {
     render() {
+        console.log(this.props);
         return (
         <Container >
+            
             <Card className= "flex-row flex-wrap ">
                 <Card.Header className="card-header border-0">
                     <img src="//placehold.it/200" alt="" />
                 </Card.Header>
                 <Card.Body>
-                    <Card.Title>Address</Card.Title>
+                    <Card.Title>Address {this.props.searchValue}</Card.Title>
                     {/* <h3>{this.props.todo.price}</h3> */}
                     <h3>15000</h3>
                     {/* <h3>{this.state.searchReducer.se}</h3> */}
@@ -29,4 +31,5 @@ export class ListingCard extends Component {
 ListingCard.propTypes = {
     todo: PropTypes.object.isRequired
 };
+
 export default ListingCard;

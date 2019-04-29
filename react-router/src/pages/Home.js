@@ -20,7 +20,6 @@ const Home = () => {
                     <NavbarComp></NavbarComp>
                 </div>
                 <div>
-
                     <Search ></Search>
                 </div>
             </Container>

@@ -49,7 +49,7 @@ class Search extends Component {
 
   render(){
   const {searchInput} = this.state  
-  console.log(searchInput)
+  // console.log(this.state);
   return (
     <div className="App">
       <Jumbotron>
@@ -84,7 +84,7 @@ class Search extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
+  // console.log(state);
   return{
     searchValue: state.searchReducer.searchValue,
   };
