@@ -30,7 +30,6 @@ const cardStyle = {
     width: '800px',
     background: 'grey',
 }
-
 //PropTypes
 ListingCard.propTypes = {
     todo: PropTypes.object.isRequired
