@@ -20,12 +20,10 @@ class NavbarComp extends Component {
           <Button variant="primary-success">Sell</Button>
           </Nav>
           
-          <Navbar.Brand> 
-            <Button href="" >Gator State</Button>
-          </Navbar.Brand>
+          <Navbar.Brand>Gator State</Navbar.Brand>
 
           <Nav className="navbar-right">
-            <Button href="/Login" >Login</Button>
+            <Button variant="primary-success" >Login</Button>
             <Button variant="primary-success" >Register</Button>
         </Nav>
       </Navbar>
