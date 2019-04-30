@@ -17,15 +17,16 @@ class NavbarComp extends Component {
             <NavDropdown.Item href="">House</NavDropdown.Item>
             <NavDropdown.Item href="">Dorm</NavDropdown.Item>
           </NavDropdown>
-          <Button variant="primary-success">Sell</Button>
-          </Nav>
+          <Button href="/UploadListing">Sell</Button>
+        </Nav>
           
-          <Navbar.Brand >Gator State </Navbar.Brand>
+          <Navbar.Brand href="/">Gator State</Navbar.Brand>
 
           <Nav className="navbar-right">
-            <Button variant="primary-success" >Login</Button>
+            <Button href="/Login" >Login</Button>
             <Button variant="primary-success" >Register</Button>
-        </Nav>
+          </Nav>
+          
       </Navbar>
     </div>
   );

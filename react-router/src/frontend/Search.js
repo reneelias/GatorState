@@ -54,7 +54,7 @@ class Search extends Component {
     <div className="App">
       <Jumbotron>
         <Container>
-            <h1>Gator State {this.props.searchValue}</h1>
+            <h1>Gator State</h1>
             <p>
             Find your home away from home
             </p>
