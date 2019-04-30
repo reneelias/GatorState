@@ -15,6 +15,8 @@ class About extends Component {
         "searchInput": "",
     }
 
+    
+
     render() {
         console.log(this.props.searchInput)
         return (
