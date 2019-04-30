@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Map from '../frontend/Map'
+import axios from 'axios';
 
 import {
   updateSearch,
@@ -14,14 +15,50 @@ import {
 class About extends Component {
     state = {
         "searchInput": "",
+        "searchState": "",
+        todos: [
+            {
+              id : "",
+              address: "",
+              price: 0,
+              distance: 0,
+              date: "4/27/2019",
+              imgurl: "https://sfrecpark.org/wp-content/uploads/Delores-park-san-francisco1-480x286.jpg"
+            },]
     }
 
-    
+    componentDidMount() {
+        this.authenticate();
+      }
+
+    authenticate = async () => {
+        this.setState({
+            searchState: 'LOADING',
+        });
+
+        await axios.get(`http://localhost:3001/listingsSearch/${this.props.searchValue}`)
+                .then((response) => {
+                    const data = response.data;
+                    console.log(data);
+                    this.setState({
+                        searchState: 'AUTHENTICATED',
+                        // id: response
+                    });
+                })
+                .catch((e) => {
+                    console.log("error");
+                    this.setState({
+                        searchState: 'DENIED',
+                    })
+                })
+    }
 
     render() {
-        console.log(this.props.searchInput)
+        console.log(`searchValue: ${this.props.searchValue}`);
+        
         return (
             <div>
+            {this.state.authenticate}
             <NavbarResultPage />
             <Container fluid>
                 <Row>
