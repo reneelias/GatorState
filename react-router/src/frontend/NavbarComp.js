@@ -21,7 +21,7 @@ class NavbarComp extends Component {
           </Nav>
           
           <Navbar.Brand> 
-            <Button href="/Home" >Gator State</Button>
+            <Button href="" >Gator State</Button>
           </Navbar.Brand>
 
           <Nav className="navbar-right">
