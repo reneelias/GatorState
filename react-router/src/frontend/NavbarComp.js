@@ -21,7 +21,7 @@ class NavbarComp extends Component {
           </Nav>
           
           <Navbar.Brand >Gator State </Navbar.Brand>
-          
+
           <Nav className="navbar-right">
             <Button variant="primary-success" >Login</Button>
             <Button variant="primary-success" >Register</Button>
