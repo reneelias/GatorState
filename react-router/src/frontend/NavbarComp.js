@@ -23,6 +23,7 @@ class NavbarComp extends Component {
           <Navbar.Brand> 
             <Button href="/Home" >Gator State</Button>
           </Navbar.Brand>
+          <Navbar.Brand >Gator State </Navbar.Brand>
 
           <Nav className="navbar-right">
             <Button variant="primary-success" >Login</Button>
