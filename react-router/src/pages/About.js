@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
+import Map from '../frontend/Map'
 
 import {
   updateSearch,
@@ -21,10 +22,18 @@ class About extends Component {
         console.log(this.props.searchInput)
         return (
             <div>
-                <h2>About</h2>
-                {this.props.searchValue}
-                <Listing/>
-            </div>
+            <NavbarResultPage />
+            <Container fluid>
+                <Row>
+                    <Col>
+                        <Map />
+                    </Col>
+                    <Col >
+                        <Listing />
+                    </Col>
+                </Row>
+            </Container>
+        </div>
         );
     }
 }
