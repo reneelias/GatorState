@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { userActions } from '../_actions';
 
-export class LoginPage extends React.Component {
+class LoginPage extends React.Component {
     constructor(props) {
         super(props);
 
