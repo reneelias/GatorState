@@ -36,7 +36,9 @@ class NavbarComp extends Component {
   return (
     <div>
         <Navbar bg="dark ">
-          <Navbar.Brand style={{color:"white"}}>GatorState</Navbar.Brand>
+          <Navbar.Brand style={{color:"white"}}>
+          <Button href="/About">GatorState</Button>
+          </Navbar.Brand>
           <InputGroup >
             <FormControl
               placeholder="Search by address, zipcode, or city..."
