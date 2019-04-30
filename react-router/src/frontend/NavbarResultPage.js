@@ -37,7 +37,7 @@ class NavbarComp extends Component {
     <div>
         <Navbar bg="dark ">
           <Navbar.Brand style={{color:"white"}}>
-          <Button href="/About">GatorState</Button>
+          <Button href="/">GatorState</Button>
           </Navbar.Brand>
           <InputGroup >
             <FormControl
