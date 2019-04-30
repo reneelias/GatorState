@@ -17,7 +17,7 @@ class NavbarComp extends Component {
             <NavDropdown.Item href="">House</NavDropdown.Item>
             <NavDropdown.Item href="">Dorm</NavDropdown.Item>
           </NavDropdown>
-          <Button variant="primary-success">Sell</Button>
+          <Button href="/UploadListing">Sell</Button>
           </Nav>
           
           <Navbar.Brand>Gator State</Navbar.Brand>
