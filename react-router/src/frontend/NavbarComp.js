@@ -25,7 +25,7 @@ class NavbarComp extends Component {
           </Navbar.Brand>
 
           <Nav className="navbar-right">
-            <Button variant="primary-success" >Login</Button>
+            <Button href="/Login" >Login</Button>
             <Button variant="primary-success" >Register</Button>
         </Nav>
       </Navbar>
