@@ -4,7 +4,7 @@ import NavbarResultPage from '../frontend/NavbarResultPage'
 
 
 
-class UploadListing extends Component {
+export class UploadListing extends React.Component {
     render(){
         return(
             <div>
