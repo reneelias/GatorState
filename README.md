@@ -1,10 +1,17 @@
-# csc648-sp19-Team06
+#CSC 648 Spring 19 Team 6 Project - Housing for SFSU Students (GatorState)
 
-## Please do the following steps before completing Milestone 0.
-1. Change the name of the repo from csc648-sp19-TeamNN. All that needs to chanage is the NN to your respective team number. Team numbers whos value is less than 10, please pad with a 0. Ex team 1 is Team01 team 11 is Team11. Please make sure to also remove the username from the repo as well.
+#Overview
+The purpose of this project is to create a website for SFSU students to use in order to find housing around campus. In this project, we use HTML/CSS and Javascript packages such as Node, Express, and React to streamline the production process.
 
-1. PLEASE REMOVE THE USERNAME FROM THE REPO!!!
+#The Team
+- Front End Lead: Jonathan Gurdal
+- Front End: Daisy Sun
+- Back End Lead: Marlon Johnson
+- Full Stack: Minho Cha
+- Full Stack: Rene Elias
+- GitHub Master: Kayla Musleh
 
-2. Add ALL members of your team to this repo. For it to count, they must ACCEPT the invite.
+#Disclaimer
+This project is used for educational purposes and is in no way affiliated to the views of the University. We are a group of students creating this project to showcase in class and for future employers to showcase what we've done during the course of our education.
 
 
