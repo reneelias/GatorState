@@ -4,8 +4,12 @@
   "private": true,
   "dependencies": {
     "@google/maps": "^0.5.5",
+    "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
+<<<<<<< HEAD
     "cors": "^2.8.5",
+=======
+>>>>>>> 4d27e65c8bbe91562c0de54bdede99fe904d5b20
     "google-map-react": "^1.1.4",
     "google-maps-react": "^2.0.2",
     "query-string": "^6.4.2",
