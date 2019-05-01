@@ -63,10 +63,10 @@ class About extends Component {
             <Container fluid>
                 <Row>
                     <Col>
-                        <Map />
+                    <Listing />
                     </Col>
                     <Col >
-                        <Listing />
+                        <Map />
                     </Col>
                 </Row>
             </Container>

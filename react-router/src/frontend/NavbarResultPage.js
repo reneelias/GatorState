@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Nav from 'react-bootstrap/Nav';
 import FormControl from 'react-bootstrap/FormControl';
 import InputGroup from 'react-bootstrap/InputGroup';
-import DropdownButton from 'react-bootstrap/DropdownButton';
+import FilterSelection from './FilterSelection';
+import Container from 'react-bootstrap/Container';
 
 class NavbarComp extends Component {
   state = {
@@ -35,46 +34,42 @@ class NavbarComp extends Component {
   const {searchInput} = this.state
   return (
     <div>
-        <Navbar bg="dark ">
-          <Navbar.Brand style={{color:"white"}} href="/">GatorState</Navbar.Brand>
-          <InputGroup >
-            <FormControl
-              placeholder="Search by address, zipcode, or city..."
-              onChange={this.onSearchHandler}
-              value={searchInput[0]}
-            />
-            <InputGroup.Append>
-              <Button variant="primary">Submit</Button>&nbsp;
-            </InputGroup.Append>
-            <Nav>
+        <Navbar bg="dark" style={{color:"white"}}>
+          <Navbar.Brand 
+          style={{color:"white"}} 
+          href="/"
+          >GatorState</Navbar.Brand>
+          <Container fluid >
+              <Button 
+                variant="primary"
+                href="#"
+              >About</Button>&nbsp;
+              <Button 
+                variant="primary"
+                href="/UploadListing"
+              >Post</Button>&nbsp;
               
-              <DropdownButton title="Price">
               <InputGroup>
-                <FormControl
-                  type="text"
-                  placeholder="Min"
-                />
-                <FormControl
-                  type="text"
-                  placeholder="Max"
-                />
-              </InputGroup>
-              </DropdownButton>&nbsp;
+              <InputGroup.Prepend>
+                <FilterSelection />
+              </InputGroup.Prepend>
               
-              <DropdownButton title="Distance">
                 <FormControl
-                  type="text"
-                  placeholder="Miles from SFSU: "
+                    placeholder="Search by address, zipcode, or city..."
+                    onChange={this.onSearchHandler}
+                    value={searchInput[0]}
+
                 />
-              </DropdownButton>&nbsp;
-              
-              <DropdownButton title="Housing Type">
-                <NavDropdown.Item href="">Apartment</NavDropdown.Item>
-                <NavDropdown.Item href="">House</NavDropdown.Item>
-                <NavDropdown.Item href="">Dorm</NavDropdown.Item>
-              </DropdownButton>&nbsp;
-            </Nav>
-          </InputGroup>
+                <InputGroup.Append>
+                  <Button variant="primary">Search</Button>&nbsp;
+                </InputGroup.Append>
+              <Button 
+              variant="primary"
+              href="/Login"
+              >Login</Button>&nbsp;
+              <Button variant="primary">Registration</Button>&nbsp;
+            </InputGroup>
+          </Container>
         </Navbar>
     </div>
   );
