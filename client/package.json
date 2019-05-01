@@ -1,18 +1,12 @@
 {
-  "name": "react-router",
-  "version": "0.1.0",
+  "name": "client",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@google/maps": "^0.5.5",
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "cors": "^2.8.5",
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 4d27e65c8bbe91562c0de54bdede99fe904d5b20
-    "google-map-react": "^1.1.4",
->>>>>>> 99ff1c7bc27576b477db2efe73eaa6b417fb33a3
     "google-maps-react": "^2.0.2",
     "query-string": "^6.4.2",
     "react": "^16.8.6",

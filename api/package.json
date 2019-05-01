@@ -8,6 +8,17 @@
     "start": "node server.js",
     "dev": "nodemon ./server.js localhost 3000"
   },
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 ChromeAndroid versions",
+    "last 2 Firefox versions",
+    "last 2 FirefoxAndroid versions",
+    "last 2 Safari versions",
+    "last 2 iOS versions",
+    "last 2 Edge versions",
+    "last 2 Opera versions",
+    "last 2 OperaMobile versions"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CSC-648-SFSU/csc648-sp19-Team06.git"
@@ -22,6 +33,10 @@
   },
   "homepage": "https://github.com/CSC-648-SFSU/csc648-sp19-Team06#readme",
   "dependencies": {
+    "@reach/router": "^1.2.1",
+    "petfinder-client": "^1.0.1",
+    "react": "15.x || 16.x || 16.8.6",
+    "react-dom": "15.x || 16.x || 16.8.6",
     "axios": "^0.18.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.5",
