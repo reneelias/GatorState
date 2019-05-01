@@ -17,6 +17,7 @@ class NavbarComp extends Component {
           <Navbar.Brand style={{color:"white"}}href="/">Gator State</Navbar.Brand>
 
           <Nav className="navbar-right">
+            <Button>Messages</Button>
             <Button href="/Login" >Login</Button>&nbsp;
             <Button> Register</Button>
           </Nav>
