@@ -5,11 +5,7 @@
   "dependencies": {
     "@google/maps": "^0.5.5",
     "bootstrap": "^4.3.1",
-<<<<<<< HEAD
     "cors": "^2.8.5",
-=======
-    "google-map-react": "^1.1.4",
->>>>>>> 133aa35dbced0ffc9d86e5196d4314f20dbada90
     "google-maps-react": "^2.0.2",
     "query-string": "^6.4.2",
     "react": "^16.8.6",
