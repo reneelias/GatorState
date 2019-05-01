@@ -9,18 +9,19 @@ import NavbarComp from '../frontend/NavbarComp';
 import Search from '../frontend/Search';
 import Container from 'react-bootstrap/Container';
 import Jumbotron from 'react-bootstrap/Jumbotron';
-import Image from 'react-bootstrap/Image';
 
 const Home = () => {
 
 
     return (
-        <Container fluid>
+        <div>
             <NavbarComp />
+        <Container fluid>
             <Jumbotron>
                 <Search />
             </ Jumbotron>
         </Container>
+        </div>
     );
 };
 

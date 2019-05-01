@@ -27,8 +27,8 @@ export class ListingCard extends Component {
     }
 }
 
-const cardStyle = {
-    width: '800px',
+const cardStyle = { 
+    width: '600px',
     background: 'grey',
 }
 //PropTypes
