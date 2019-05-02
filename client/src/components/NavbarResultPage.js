@@ -3,6 +3,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import FormControl from 'react-bootstrap/FormControl';
 import InputGroup from 'react-bootstrap/InputGroup';
+import Nav from 'react-bootstrap/Nav';
+import DropdownButton from 'react-bootstrap/DropdownButton'
+import NavDropdown from 'react-bootstrap/NavDropdown'
 import FilterSelection from './FilterSelection';
 import Container from 'react-bootstrap/Container';
 
