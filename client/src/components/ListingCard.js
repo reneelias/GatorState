@@ -31,7 +31,7 @@ export class ListingCard extends Component {
 }
 
 const cardStyle = {
-  width: '600px',
+  width: '100%',
   background: 'grey',
   padding: '1%'
 };

@@ -63,10 +63,10 @@ class About extends Component {
         <NavbarResultPage />
         <Container fluid>
           <Row>
-            <Col>
+            <Col className= "px-0">
               <Map />
             </Col>
-            <Col>
+            <Col className= "px-0">
               <Listing />
             </Col>
           </Row>

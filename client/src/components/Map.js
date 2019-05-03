@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
  
-const Marker = ({text}) => <div>{}</div>
+const Marker = ({text}) => <div>{text}</div>
 
 
 class SimpleMap extends Component {
@@ -21,7 +21,10 @@ class SimpleMap extends Component {
           bootstrapURLKeys={{ key: 'AIzaSyBe7J1RZpb8hX6N1zpT43hn9LvAnrx2o2k' }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
+          yesIWantToUseGoogleMapApiInternals
+          onGoogleApiLoaded={({map, maps}) => console.log(map, maps)}
         >
+          
           <Marker
             lat={37.7219}
             lng={-122.4782}
