@@ -28,11 +28,11 @@ class NavbarComp extends Component {
               GatorState
           </Navbar.Brand>
           <NavButton>About</NavButton>&nbsp;
-          <NavButton>Post</NavButton>&nbsp;
+          <NavButton href="/UploadListing">Post</NavButton>&nbsp;
         </Nav>
         <Search />
         <Nav>
-          <NavButton>Login</NavButton>&nbsp;
+          <NavButton href="/Login">Login</NavButton>&nbsp;
           <NavButton>Registration</NavButton>&nbsp;
         </Nav>
         </Navbar>
