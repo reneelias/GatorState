@@ -45,14 +45,14 @@ class Listing extends Component {
     console.log(this.state);
     let listingCards = this.state.todos.map(todo => {
       return (
-        <Col>
+        
           <ListingCard key={todo.id} todo={todo} />
-        </Col>
+        
       );
     });
     return (
       <Container>
-        <Row>{listingCards}</Row>
+        {listingCards}
       </Container>
     );
   }

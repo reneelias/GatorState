@@ -2,33 +2,38 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
 export class ListingCard extends Component {
   render() {
     console.log(this.props);
     return (
-      <Container>
-        <Card className="flex-row flex-wrap border" style={cardStyle}>
-          <Card.Header>
-            <img src="//placehold.it/200" alt="" />
-          </Card.Header>
-          <Card.Body className="justify-content-start">
-            <Card.Title>Address</Card.Title>
-            {/* <h3>{this.props.todo.price}</h3> */}
-            <h3>15000</h3>
-            {/* <h3>{this.state.searchReducer.se}</h3> */}
-            {/* <h4>Miles from SFSU: {this.props.todo.distance}</h4> */}
-            <h4>Miles from SFSU: 5</h4>
-          </Card.Body>
+    <Container>
+        <Card>
+            <div className="row no-gutters">
+                <div className="col-auto">
+                    <img src="//placehold.it/200" class="img-fluid" alt="" />
+                </div>
+                <Col>
+                    <div class="card-block px-2">
+                        <h4 className="card-title">Address: 1600 Holloway Avenue</h4>
+                        <h5 className="card-text">Price: </h5>
+                        <h5 className="card-text">Distance: </h5>
+                        <Button href="#" className="primary btn-block">View Listing</Button>
+                    </div>
+                </Col>
+            </div>
         </Card>
-      </Container>
+    </Container>
     );
   }
 }
 
 const cardStyle = {
-  width: '800px',
-  background: 'grey'
+  width: '600px',
+  background: 'grey',
+  padding: '1%'
 };
 //PropTypes
 ListingCard.propTypes = {

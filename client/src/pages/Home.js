@@ -6,9 +6,6 @@ import React from 'react';
 
 
 import NavbarResultPage from '../components/NavbarResultPage';
-import Search from '../components/Search';
-import Container from 'react-bootstrap/Container';
-import Jumbotron from 'react-bootstrap/Jumbotron';
 
 export const Home = () => {
 
@@ -16,11 +13,6 @@ export const Home = () => {
     return (
         <div>
             <NavbarResultPage />
-        <Container fluid>
-            <Jumbotron>
-                <Search />
-            </ Jumbotron>
-        </Container>
         </div>
     );
 };

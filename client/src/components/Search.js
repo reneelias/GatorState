@@ -1,25 +1,28 @@
 import React, { Component } from 'react';
-import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 import FormControl from 'react-bootstrap/FormControl';
-
+import styled from 'styled-components'
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
-import Filter from './Filter';
+import FilterSelection from './FilterSelection';
 
 import { connect } from 'react-redux';
 import { updateSearch } from '../components/redux/actions/searchActions';
 
+
 class Search extends Component {
   state = {
-    searchInput: ''
-    // {
-    //   "address": "",
-    //   "zipcode": "",
-    //   "city": ""
-    // }
+    searchInput: {
+      search: '',
+      address: '',
+      zipcode: '',
+      city: '',
+      price: '',
+      distance: '',
+      type: ''
+    }
   };
 
   onSearchHandler = event => {
@@ -49,14 +52,14 @@ class Search extends Component {
     // console.log(this.state);
     return (
       <div className="App">
-        <Jumbotron>
-          <Container>
-            <h1>Gator State</h1>
-            <p>Find your home away from home</p>
-            <div>
-              <InputGroup className="mb-3">
+          <Container style={{width: '600px'}}>
+              <InputGroup>
+              <InputGroup.Prepend>
+                <FilterSelection />
+              </InputGroup.Prepend>
                 <FormControl
-                  placeholder="Search by address, zipcode, or city"
+                  placeholder="Search by address, zipcode, or city..."
+                  
                   // onChange={this.onSearchHandler}
                   onChange={e => {
                     this.props.updateSearch(e.target.value);
@@ -66,15 +69,13 @@ class Search extends Component {
                 <InputGroup.Append>
                   {/* <Button variant="outline-primary"><Link to={{pathname:"/about", searchValue: searchInput}}>Search</Link></Button> */}
                   {/* <Button onClick={this.onSearchButtonClick} variant="outline-primary"><Link to="/about">Search</Link></Button> */}
-                  <Button variant="outline-primary">
-                    <Link to="/about">Search</Link>
+                  
+                  <Button variant="primary">
+                    <Link to="/about" style={{color: 'white', background: 'rgb(0, 123, 255)'}}>Search</Link>
                   </Button>
                 </InputGroup.Append>
               </InputGroup>
-              <Filter />
-            </div>
           </Container>
-        </Jumbotron>
       </div>
     );
   }
