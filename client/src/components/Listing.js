@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import ListingCard from './ListingCard';
 import PropTypes from 'prop-types';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 
 class Listing extends Component {
@@ -42,7 +40,6 @@ class Listing extends Component {
   //the info and displays them in a card
   //
   render() {
-    console.log(this.state);
     let listingCards = this.state.todos.map(todo => {
       return (
         
