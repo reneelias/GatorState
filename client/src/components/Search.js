@@ -67,7 +67,7 @@ class Search extends Component {
                   {/* <Button variant="outline-primary"><Link to={{pathname:"/about", searchValue: searchInput}}>Search</Link></Button> */}
                   {/* <Button onClick={this.onSearchButtonClick} variant="outline-primary"><Link to="/about">Search</Link></Button> */}
                   <Button variant="outline-primary">
-                    <Link to="/about">Search</Link>
+                    <Link to="/results">Search</Link>
                   </Button>
                 </InputGroup.Append>
               </InputGroup>
