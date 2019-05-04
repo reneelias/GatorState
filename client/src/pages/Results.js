@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Listing from '../components/Listing';
-import NavbarResultPage from '../components/NavbarResultPage';
+import NavbarResultPage from '../components/Navbar';
 import { connect } from 'react-redux';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -10,7 +10,7 @@ import axios from 'axios';
 
 import { updateSearch } from '../components/redux/actions/searchActions';
 
-class About extends Component {
+class Results extends Component {
   state = {
     searchInput: '',
     searchState: '',
@@ -63,10 +63,10 @@ class About extends Component {
         <NavbarResultPage />
         <Container fluid>
           <Row>
-            <Col>
+            <Col className= "px-0">
               <Map />
             </Col>
-            <Col>
+            <Col className= "px-0" style={{background:"#AADAFF"}}>
               <Listing />
             </Col>
           </Row>
@@ -102,4 +102,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(About);
+)(Results);
