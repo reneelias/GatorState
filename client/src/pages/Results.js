@@ -63,10 +63,10 @@ class Results extends Component {
         <NavbarResultPage />
         <Container fluid>
           <Row>
-            <Col>
+            <Col className= "px-0">
               <Map />
             </Col>
-            <Col>
+            <Col className= "px-0" style={{background:"#AADAFF"}}>
               <Listing />
             </Col>
           </Row>

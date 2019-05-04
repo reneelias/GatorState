@@ -1,75 +1,39 @@
 import React, { Component } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
-import Button from 'react-bootstrap/Button';
-import FormControl from 'react-bootstrap/FormControl';
-import InputGroup from 'react-bootstrap/InputGroup';
+import Search from './Search';
+import styled from 'styled-components';
 import Nav from 'react-bootstrap/Nav';
-import DropdownButton from 'react-bootstrap/DropdownButton'
-import NavDropdown from 'react-bootstrap/NavDropdown'
-import FilterSelection from './FilterSelection';
-import Container from 'react-bootstrap/Container';
+
+
+const NavButton = styled.button`
+  display: inline-block;
+  font-size: 1em;
+  color: white;
+  background: rgb(0, 123, 255);
+  border: none;
+  border-radius: 3px;
+  font: sans serif;
+  text-align: center;
+  line-height: 36px;
+`
 
 class NavbarComp extends Component {
-  state = {
-    searchInput: {
-      search: '',
-      address: '',
-      zipcode: '',
-      city: '',
-      price: '',
-      distance: '',
-      type: ''
-    }
-  };
-
-  onSearchHandler = event => {
-    const { searchInput } = this.state;
-    this.setState({
-      searchInput: {
-        address: event.target.value,
-        zipcode: event.target.value,
-        city: event.target.value
-      }
-    });
-  };
-
   render() {
-    const { searchInput } = this.state;
     return (
       <div>
-        <Navbar bg="dark ">
+        <Navbar bg="dark" className="justify-content-between" style={{width:"auto"}}>
+        <Nav >
           <Navbar.Brand style={{ color: 'white' }} href="/">
-            GatorState
+              GatorState
           </Navbar.Brand>
-          <InputGroup>
-            <FormControl
-              placeholder="Search by address, zipcode, or city..."
-              onChange={this.onSearchHandler}
-              value={searchInput[0]}
-            />
-            <InputGroup.Append>
-              <Button variant="primary">Submit</Button>&nbsp;
-            </InputGroup.Append>
-            <Nav>
-              <DropdownButton title="Price">
-                <InputGroup>
-                  <FormControl type="text" placeholder="Min" />
-                  <FormControl type="text" placeholder="Max" />
-                </InputGroup>
-              </DropdownButton>
-              &nbsp;
-              <DropdownButton title="Distance">
-                <FormControl type="text" placeholder="Miles from SFSU: " />
-              </DropdownButton>
-              &nbsp;
-              <DropdownButton title="Housing Type">
-                <NavDropdown.Item href="">Apartment</NavDropdown.Item>
-                <NavDropdown.Item href="">House</NavDropdown.Item>
-                <NavDropdown.Item href="">Dorm</NavDropdown.Item>
-              </DropdownButton>
-              &nbsp;
-            </Nav>
-          </InputGroup>
+          <NavButton>About</NavButton>&nbsp;
+          <NavButton href="/UploadListing">Post</NavButton>&nbsp;
+        </Nav>
+        <Search />
+        <Nav>
+          <NavButton href="/Login">Login</NavButton>&nbsp;
+          <NavButton>Registration</NavButton>&nbsp;
+        </Nav>
         </Navbar>
       </div>
     );
