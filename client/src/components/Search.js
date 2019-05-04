@@ -11,6 +11,20 @@ import FilterSelection from './FilterSelection';
 import { connect } from 'react-redux';
 import { updateSearch } from '../components/redux/actions/searchActions';
 
+const LinkButton = styled(Link)`
+  textDecoration: none;
+  display: inline-block;
+  font-size: 1em;
+  color: white;
+  background: rgb(0, 123, 255);
+  border-radius: 3px;
+  font: sans serif;
+  height: 38px;
+  margin: auto;
+  padding: 0.25em 1em;
+    
+}
+`
 
 class Search extends Component {
   state = {
@@ -70,9 +84,9 @@ class Search extends Component {
                   {/* <Button variant="outline-primary"><Link to={{pathname:"/about", searchValue: searchInput}}>Search</Link></Button> */}
                   {/* <Button onClick={this.onSearchButtonClick} variant="outline-primary"><Link to="/about">Search</Link></Button> */}
                   
-                  <Button variant="primary">
-                    <Link to="/about" style={{color: 'white', background: 'rgb(0, 123, 255)'}}>Search</Link>
-                  </Button>
+                  
+                    <LinkButton to="/about" style={{ textDecoration: 'none', color: 'white' }}>Search</LinkButton>
+                  
                 </InputGroup.Append>
               </InputGroup>
           </Container>

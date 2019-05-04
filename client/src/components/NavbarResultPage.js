@@ -12,7 +12,6 @@ const NavButton = styled.button`
   background: rgb(0, 123, 255);
   border: none;
   border-radius: 3px;
-  display: block;
   font: sans serif;
   text-align: center;
   line-height: 36px;
