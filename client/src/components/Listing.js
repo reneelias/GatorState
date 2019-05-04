@@ -49,6 +49,7 @@ class Listing extends Component {
     });
     return (
       <Container>
+        <h1>There are # amount of listings.</h1>
         {listingCards}
       </Container>
     );

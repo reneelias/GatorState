@@ -66,7 +66,7 @@ class About extends Component {
             <Col className= "px-0">
               <Map />
             </Col>
-            <Col className= "px-0">
+            <Col className= "px-0" style={{background:"#AADAFF"}}>
               <Listing />
             </Col>
           </Row>
