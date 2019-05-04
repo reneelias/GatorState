@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import About from '../src/pages/About';
 import { Home } from '../src/pages/Home';
 import { connect } from 'react-redux';
+import Results from '../src/pages/Results';
 
 class App extends Component {
   render() {
@@ -12,7 +12,7 @@ class App extends Component {
         <div className="App">
           <Route exact path="/" component={Home} />
           <Switch>
-            <Route path="/about" component={About} />
+            <Route path="/results" component={Results} />
           </Switch>
         </div>
       </BrowserRouter>
