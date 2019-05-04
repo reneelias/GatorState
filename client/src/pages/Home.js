@@ -53,7 +53,7 @@ const Message = styled.h2`
 export const Home = () => {
     return (
         <div>
-        <NavbarResultPage />
+        <Navbar />
         <Greeting>
             <MessageBackground>
                 <Title>
