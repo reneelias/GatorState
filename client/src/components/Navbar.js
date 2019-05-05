@@ -33,7 +33,6 @@ class NavbarComp extends Component {
         <Search />
         <Nav>
         <Login />
-          <NavButton href="/Login">Login</NavButton>&nbsp;
           <NavButton>Registration</NavButton>&nbsp;
         </Nav>
         </Navbar>
