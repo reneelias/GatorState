@@ -7,14 +7,12 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { userActions } from '../actions';
 
 class LoginPage extends Component {
   constructor(props) {
     super(props);
 
     // reset login status
-    this.props.dispatch(userActions.logout());
 
     this.state = {
         username: '',
@@ -38,7 +36,6 @@ handleSubmit(e) {
     const { username, password } = this.state;
     const { dispatch } = this.props;
     if (username && password) {
-        dispatch(userActions.login(username, password));
     }
 }
 

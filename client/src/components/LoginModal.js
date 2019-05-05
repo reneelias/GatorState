@@ -29,7 +29,6 @@ class LoginModal extends React.Component {
           </Button>
   
           <Modal
-            size="sm"
             show={this.state.lgShow}
             onHide={lgClose}
             aria-labelledby="example-modal-sizes-title-sm"
