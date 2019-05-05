@@ -26,16 +26,16 @@ const LinkButton = styled(Link)`
 }
 `
 
-class Login extends Component {
+class Register extends Component {
 
 
   render() {
     
     return (
       <div className="App">
-          <Container style={{width: '100px'}}>
+          <Container style={{width: '150px'}}>
   
-                    <LinkButton to="/login" style={{ textDecoration: 'none', color: 'white' }}>Login</LinkButton>
+                    <LinkButton to="/register" style={{ textDecoration: 'none', color: 'white' }}>Registration</LinkButton>
                   
           </Container>
       </div>
@@ -45,4 +45,4 @@ class Login extends Component {
 
 
 
-export default connect()(Login);
+export default connect()(Register);

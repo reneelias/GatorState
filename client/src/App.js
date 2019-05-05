@@ -4,6 +4,7 @@ import { Home } from '../src/pages/Home';
 import { connect } from 'react-redux';
 import Results from '../src/pages/Results';
 import LoginPage from '../src/pages/LoginPage';
+import RegistrationPage from '../src/pages/RegistrationPage';
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
           <Switch>
             <Route path="/results" component={Results} />
             <Route path="/login" component={LoginPage} />
+            <Route path="/register" component={RegistrationPage} />
           </Switch>
         </div>
       </BrowserRouter>

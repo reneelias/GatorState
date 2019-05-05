@@ -4,6 +4,7 @@ import Search from './Search';
 import Login from './Login';
 import styled from 'styled-components';
 import Nav from 'react-bootstrap/Nav';
+import Register from './Register';
 
 
 const NavButton = styled.button`
@@ -33,8 +34,7 @@ class NavbarComp extends Component {
         <Search />
         <Nav>
         <Login />
-          <NavButton href="/Login">Login</NavButton>&nbsp;
-          <NavButton>Registration</NavButton>&nbsp;
+        <Register />
         </Nav>
         </Navbar>
       </div>
