@@ -3,7 +3,13 @@ import ListingCard from './ListingCard';
 import PropTypes from 'prop-types';
 import Container from 'react-bootstrap/Container';
 import axios from 'axios';
+import styled from 'styled-components';
 
+const ResultText = styled.h1`
+  font-size: 1.5em;
+  text-align:center;
+
+`
 class Listing extends Component {
   state = {
     searchInput: '',
@@ -92,8 +98,10 @@ class Listing extends Component {
          </div>} 
          {this.state.searchState === 'AUTHENTICATED' && 
          <div>
-           <div>Showing Results For: {this.props.searchInput}</div>
-           <div>Number of Results: {this.state.resultsTotal}</div>
+           <ResultText>
+            {/* Showing results for: {this.props.searchInput} */}
+            Number of results: {this.state.resultsTotal}
+            </ResultText>
         <div>{listingCards}</div>
         </div>
          } 
