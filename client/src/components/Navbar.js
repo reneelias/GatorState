@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Search from './Search';
+import Register from './Register';
 import styled from 'styled-components';
 import Nav from 'react-bootstrap/Nav';
-
+import LoginModal from './LoginModal';
 
 const NavButton = styled.button`
   display: inline-block;
@@ -31,8 +32,7 @@ class NavbarComp extends Component {
         </Nav>
         <Search />
         <Nav>
-          <NavButton href="/Login">Login</NavButton>&nbsp;
-          <NavButton>Registration</NavButton>&nbsp;
+        <LoginModal />
         </Nav>
         </Navbar>
       </div>

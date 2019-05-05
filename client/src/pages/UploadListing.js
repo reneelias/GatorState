@@ -8,7 +8,7 @@ class UploadListing extends Component {
     render(){
         return(
             <div>
-                <NavBarResultPage />
+                <NavbarResultPage />
                 <div>
                     <h1>Upload Listing</h1>
                     <MDBInput label= "Address*" />
