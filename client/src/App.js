@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Home } from '../src/pages/Home';
 import { connect } from 'react-redux';
 import Results from '../src/pages/Results';
+import LoginPage from '../src/pages/LoginPage';
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Switch>
             <Route path="/results" component={Results} />
+            <Route path="/login" component={LoginPage} />
           </Switch>
         </div>
       </BrowserRouter>

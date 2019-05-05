@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Search from './Search';
+import Login from './Login';
 import styled from 'styled-components';
 import Nav from 'react-bootstrap/Nav';
 
@@ -31,6 +32,7 @@ class NavbarComp extends Component {
         </Nav>
         <Search />
         <Nav>
+        <Login />
           <NavButton href="/Login">Login</NavButton>&nbsp;
           <NavButton>Registration</NavButton>&nbsp;
         </Nav>
