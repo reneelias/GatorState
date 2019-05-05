@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Search from './Search';
 import Login from './Login';
+import Register from './Register';
 import styled from 'styled-components';
 import Nav from 'react-bootstrap/Nav';
-import Register from './Register';
-
 
 const NavButton = styled.button`
   display: inline-block;
