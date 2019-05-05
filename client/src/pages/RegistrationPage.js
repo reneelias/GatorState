@@ -2,14 +2,8 @@ import React, { Component } from 'react';
 import Listing from '../components/Listing';
 import NavbarResultPage from '../components/Navbar';
 import { connect } from 'react-redux';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
-<<<<<<< HEAD
 import styled from 'styled-components';
-=======
 import { Link } from 'react-router-dom';
->>>>>>> 325673c44cbe4a95351a7485eebc092004a95006
 
 import axios from 'axios';
 
@@ -35,14 +29,6 @@ class RegistrationPage extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
 }
 
-<<<<<<< HEAD
-    return (
-      <RegDiv>
-        <h1>Registration</h1>
-      </RegDiv>
-    );
-  }
-=======
 handleChange(event) {
     const { name, value } = event.target;
     const { user } = this.state;
@@ -63,7 +49,6 @@ handleSubmit(event) {
     if (user.firstName && user.lastName && user.username && user.password) {
         //dispatch(userActions.register(user));
     }
->>>>>>> 325673c44cbe4a95351a7485eebc092004a95006
 }
 
     render() {
