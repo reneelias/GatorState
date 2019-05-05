@@ -5,10 +5,13 @@ import { connect } from 'react-redux';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
+import styled from 'styled-components';
 
 import axios from 'axios';
 
-
+const RegDiv = styled.div`
+  margin: auto;
+`
 class RegistrationPage extends Component {
 
 
@@ -16,9 +19,9 @@ class RegistrationPage extends Component {
 
 
     return (
-      <div>
+      <RegDiv>
         <h1>Registration</h1>
-      </div>
+      </RegDiv>
     );
   }
 }

@@ -38,7 +38,7 @@ class LoginModal extends React.Component {
                 Login
               </Modal.Title>
             </Modal.Header>
-            <Modal.Body> <LoginPage /> </Modal.Body>
+            <Modal.Body> <LoginPage/> </Modal.Body>
           </Modal>
   
           <Modal

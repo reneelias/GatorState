@@ -7,7 +7,11 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import styled from "styled-components";
 
+const ModalContent = styled.div`
+    margin:auto;
+`
 class LoginPage extends Component {
   constructor(props) {
     super(props);
@@ -43,7 +47,7 @@ handleSubmit(e) {
     const { loggingIn } = this.props;
     const { username, password, submitted } = this.state;
     return (
-        <div className="col-md-6 col-md-offset-3">
+        <ModalContent className="col-md-6 col-md-offset-3">
             <h2>Login</h2>
             <form name="form" onSubmit={this.handleSubmit}>
                 <div className={'form-group' + (submitted && !username ? ' has-error' : '')}>
@@ -68,7 +72,7 @@ handleSubmit(e) {
                     <Link to="/register" className="btn btn-link">Register</Link>
                 </div>
             </form>
-        </div>
+        </ModalContent>
     );
   }
 }
