@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Map from '../components/Map';
+import axios from 'axios';
 
 import { updateSearch } from '../components/redux/actions/searchActions';
 
@@ -13,19 +14,7 @@ class Results extends Component {
   state = {
     searchInput: '',
     searchState: '',
-    todos: [
-      {
-        id: '',
-        address: '',
-        price: 0,
-        distance: 0,
-        date: '4/27/2019',
-        imgurl:
-          'https://sfrecpark.org/wp-content/uploads/Delores-park-san-francisco1-480x286.jpg'
-      }
-    ]
   };
-
 
   render() {
     // console.log(`searchValue: ${this.props.searchValue}`);

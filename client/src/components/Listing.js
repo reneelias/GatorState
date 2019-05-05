@@ -7,37 +7,10 @@ import axios from 'axios';
 class Listing extends Component {
   state = {
     searchInput: '',
-    data: '',
+    data: null,
     searchState: 'LOADING',
-    todos: [
-      {
-        id: 1,
-        address: '1600 Holloway Ave',
-        price: 1000,
-        distance: 3,
-        date: '4/27/2019',
-        imgurl:
-          'https://sfrecpark.org/wp-content/uploads/Delores-park-san-francisco1-480x286.jpg'
-      },
-      {
-        id: 1,
-        address: '1600 Holloway Ave',
-        price: 1000,
-        distance: 3,
-        date: '4/27/2019',
-        imgurl:
-          'https://sfrecpark.org/wp-content/uploads/Delores-park-san-francisco1-480x286.jpg'
-      },
-      {
-        id: 1,
-        address: '1600 Holloway Ave',
-        price: 1000,
-        distance: 3,
-        date: '4/27/2019',
-        imgurl:
-          'https://sfrecpark.org/wp-content/uploads/Delores-park-san-francisco1-480x286.jpg'
-      }
-    ]
+    todos: [],
+    resultsTotal: 0,
   };
 
   // resultsArr = [];
@@ -53,26 +26,33 @@ class Listing extends Component {
     });
 
     await axios
-      .get(`http://localhost:3001/listingsSearch/${this.props.searchValue}`)
+      .get(`http://localhost:3001/listingsSearch/${this.props.searchInput}`)
       .then(response => {
         const resData = response.data;
-        // var len = data[0].length;
-        // console.log(`len = ${len}`);
-        // console.log(`response:`);
-        // console.log(response);
-        // console.log(`YO!`);
         console.log('Response');
         console.log(response);
-        // console.log(resData);
-        // console.log(response.data);
-        // console.log(`data[0]: ${data[0][0]}`);
-        
+        console.log(response.data);
+        var i = 1;
+
+        (resData).forEach(element => {
+          this.state.todos.push({
+            id: i,
+            address: `${element.street_address}, ${element.zip_code}`,
+            price: element.price,
+            distance: 3,
+            date: '4/27/2019',
+            imgurl: `${element.images}`
+          })
+          i++;
+          
+        });
+        i = i-1;
         this.setState({
           searchState: 'AUTHENTICATED',
-          // data: response.data
-          // id: response
+           data: resData,
+           resultsTotal: i,
         });
-        console.log(`data: ${this.state.data}`);
+        // console.log(`data: ${this.state.data}`);
       })
       .catch(e => {
         console.log('error');
@@ -86,29 +66,40 @@ class Listing extends Component {
   //the info and displays them in a card
   //
   render() {
+
     console.log(`searchInput: ${this.props.searchInput}`);
-    console.log(`data: ${this.props.data}`);
-    let listingCards = this.state.todos.map(todo => {
-      return (
-          <ListingCard key={todo.id} todo={todo} />
-      );
-    });
+    var listingCards;
+    if(this.state.searchState === 'AUTHENTICATED')
+    {
+      console.log(`data: ${this.state.data[0].street_address}`);
+      listingCards = this.state.todos.map(todo => {
+        return (
+            <ListingCard key={todo.id} todo={todo} />
+        );
+      });
+
+      console.log(this.state.resultsTotal);
+    }
     
     return (
       <Container>
         <div>
         {this.state.searchState === 'LOADING' &&
-        <div><h1>There are # amount of listings.</h1>
-        {/* {this.state.searchState} */}
-        4
-        {this.props.data}
-        </div>}
-        {this.state.searchState === 'AUTHENTICATED' &&
+         <div><h1>Loading Listings</h1> 
+        {this.state.searchState} }
+         4 
+         {/* {this.state.data[0].street_address}  */}
+         </div>} 
+         {this.state.searchState === 'AUTHENTICATED' && 
+         <div>
+           <div>Showing Results For: {this.props.searchInput}</div>
+           <div>Number of Results: {this.state.resultsTotal}</div>
         <div>{listingCards}</div>
-        }
-        {this.state.searchState === 'DENIED' &&
-        <div>Not good</div>
-        }
+        </div>
+         } 
+         {this.state.searchState === 'DENIED' && 
+         <div>Not good</div> 
+         } 
         </div>
       </Container>
     );
