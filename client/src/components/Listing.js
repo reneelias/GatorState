@@ -2,55 +2,113 @@ import React, { Component } from 'react';
 import ListingCard from './ListingCard';
 import PropTypes from 'prop-types';
 import Container from 'react-bootstrap/Container';
+import axios from 'axios';
+import styled from 'styled-components';
 
+const ResultText = styled.h1`
+  font-size: 1.5em;
+  text-align:center;
+
+`
 class Listing extends Component {
   state = {
     searchInput: '',
-    todos: [
-      {
-        id: 1,
-        address: '1600 Holloway Ave',
-        price: 1000,
-        distance: 3,
-        date: '4/27/2019',
-        imgurl:
-          'https://sfrecpark.org/wp-content/uploads/Delores-park-san-francisco1-480x286.jpg'
-      },
-      {
-        id: 1,
-        address: '1600 Holloway Ave',
-        price: 1000,
-        distance: 3,
-        date: '4/27/2019',
-        imgurl:
-          'https://sfrecpark.org/wp-content/uploads/Delores-park-san-francisco1-480x286.jpg'
-      },
-      {
-        id: 1,
-        address: '1600 Holloway Ave',
-        price: 1000,
-        distance: 3,
-        date: '4/27/2019',
-        imgurl:
-          'https://sfrecpark.org/wp-content/uploads/Delores-park-san-francisco1-480x286.jpg'
-      }
-    ]
+    data: null,
+    searchState: 'LOADING',
+    todos: [],
+    resultsTotal: 0,
   };
+
+  // resultsArr = [];
+  // var len
+
+  componentDidMount() {
+    this.authenticate();
+  }
+
+  authenticate = async () => {
+    this.setState({
+      searchState: 'LOADING'
+    });
+
+    await axios
+      .get(`http://localhost:3001/listingsSearch/${this.props.searchInput}`)
+      .then(response => {
+        const resData = response.data;
+        console.log('Response');
+        console.log(response);
+        console.log(response.data);
+        var i = 1;
+
+        (resData).forEach(element => {
+          this.state.todos.push({
+            id: i,
+            address: `${element.street_address}, ${element.zip_code}`,
+            price: element.price,
+            distance: 3,
+            date: '4/27/2019',
+            imgurl: `${element.images}`
+          })
+          i++;
+          
+        });
+        i = i-1;
+        this.setState({
+          searchState: 'AUTHENTICATED',
+           data: resData,
+           resultsTotal: i,
+        });
+        // console.log(`data: ${this.state.data}`);
+      })
+      .catch(e => {
+        console.log('error');
+        this.setState({
+          searchState: 'DENIED'
+        });
+      });
+  };
+
   //In this render method we map the todos array to another component that extracts
   //the info and displays them in a card
   //
   render() {
-    let listingCards = this.state.todos.map(todo => {
-      return (
-        
-          <ListingCard key={todo.id} todo={todo} />
-        
-      );
-    });
+
+    console.log(`searchInput: ${this.props.searchInput}`);
+    var listingCards;
+    if(this.state.searchState === 'AUTHENTICATED')
+    {
+      console.log(`data: ${this.state.data[0].street_address}`);
+      listingCards = this.state.todos.map(todo => {
+        return (
+            <ListingCard key={todo.id} todo={todo} />
+        );
+      });
+
+      console.log(this.state.resultsTotal);
+    }
+    
     return (
       <Container>
-        <h1>There are # amount of listings.</h1>
-        {listingCards}
+        <div>
+        {this.state.searchState === 'LOADING' &&
+         <div><h1>Loading Listings</h1> 
+        {this.state.searchState} }
+         4 
+         {/* {this.state.data[0].street_address}  */}
+         </div>} 
+         {this.state.searchState === 'AUTHENTICATED' && 
+         <div>
+           <ResultText>
+            {/* Showing results for: {this.props.searchInput} */}
+            Number of results: {this.state.resultsTotal}
+            </ResultText>
+        <div>{listingCards}</div>
+        </div>
+         } 
+         {this.state.searchState === 'DENIED' && 
+         <div>Not good</div> 
+         } 
+        </div>
       </Container>
     );
   }

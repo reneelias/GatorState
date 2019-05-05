@@ -14,48 +14,13 @@ class Results extends Component {
   state = {
     searchInput: '',
     searchState: '',
-    todos: [
-      {
-        id: '',
-        address: '',
-        price: 0,
-        distance: 0,
-        date: '4/27/2019',
-        imgurl:
-          'https://sfrecpark.org/wp-content/uploads/Delores-park-san-francisco1-480x286.jpg'
-      }
-    ]
-  };
-
-  componentDidMount() {
-    this.authenticate();
-  }
-
-  authenticate = async () => {
-    this.setState({
-      searchState: 'LOADING'
-    });
-
-    await axios
-      .get(`http://localhost:3001/listingsSearch/${this.props.searchValue}`)
-      .then(response => {
-        const data = response.data;
-        console.log(data);
-        this.setState({
-          searchState: 'AUTHENTICATED'
-          // id: response
-        });
-      })
-      .catch(e => {
-        console.log('error');
-        this.setState({
-          searchState: 'DENIED'
-        });
-      });
   };
 
   render() {
-    console.log(`searchValue: ${this.props.searchValue}`);
+    // console.log(`searchValue: ${this.props.searchValue}`);
+    // this.setState({
+    //   searchInput: this.props.searchValue,
+    // })
 
     return (
       <div>
@@ -67,7 +32,7 @@ class Results extends Component {
               <Map />
             </Col>
             <Col className= "px-0" style={{background:"#AADAFF"}}>
-              <Listing />
+              <Listing searchInput={this.props.searchValue}/>
             </Col>
           </Row>
         </Container>
