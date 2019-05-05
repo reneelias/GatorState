@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
+import LoginPage from '../pages/LoginPage';
+import RegistrationPage from '../pages/RegistrationPage';
 
 class LoginModal extends React.Component {
     constructor(props, context) {
@@ -37,7 +39,7 @@ class LoginModal extends React.Component {
                 Login
               </Modal.Title>
             </Modal.Header>
-            <Modal.Body> ... </Modal.Body>
+            <Modal.Body> <LoginPage /> </Modal.Body>
           </Modal>
   
           <Modal
@@ -50,7 +52,7 @@ class LoginModal extends React.Component {
                 Register
               </Modal.Title>
             </Modal.Header>
-            <Modal.Body>...</Modal.Body>
+            <Modal.Body> <RegistrationPage /> </Modal.Body>
           </Modal>
         </ButtonToolbar>
       );
