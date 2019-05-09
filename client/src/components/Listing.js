@@ -49,24 +49,33 @@ class Listing extends Component {
         console.log(response.data);
         var i = 1;
 
-        (resData).forEach(element => {
-          this.state.todos.push({
-            id: i,
-            address: `${element.street_address}, ${element.zip_code}`,
-            price: element.price,
-            distance: 3,
-            date: '4/27/2019',
-            imgurl: `${element.images}`
-          })
-          i++;
+        if(resData[0].street_address != null){
+          (resData).forEach(element => {
+            this.state.todos.push({
+              id: i,
+              address: `${element.street_address}, ${element.zip_code}`,
+              price: element.price,
+              distance: 3,
+              date: '4/27/2019',
+              imgurl: `${element.images}`
+            })
+            i++;
+            
+          });
+        
+          i = i-1;
+          this.setState({
+            searchState: 'AUTHENTICATED',
+             data: resData,
+             resultsTotal: i,
+          });
           
-        });
-        i = i-1;
-        this.setState({
-          searchState: 'AUTHENTICATED',
-           data: resData,
-           resultsTotal: i,
-        });
+        }
+        else {
+          this.setState({
+            searchState: 'DENIED'
+          });
+        }
         // console.log(`data: ${this.state.data}`);
       })
       .catch(e => {
@@ -115,7 +124,7 @@ class Listing extends Component {
         </div>
          } 
          {this.state.searchState === 'DENIED' && 
-         <div>Not good</div> 
+         <div>No results</div> 
          } 
         </div>
       </Container>
