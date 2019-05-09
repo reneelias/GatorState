@@ -31,8 +31,17 @@ class Listing extends Component {
       searchState: 'LOADING'
     });
 
+    var urlString;
+    if(this.props.searchInput === "" || this.props.searchInput === null)
+    {
+      urlString = `http://gatorstate.tk/api/listings`;
+    }
+    else
+    {
+      urlString = `http://gatorstate.tk/api/listingsSearch/${this.props.searchInput}`
+    }
     await axios
-      .get(`http://gatorstate.tk/api/listingsSearch/${this.props.searchInput}`)
+      .get(urlString)
       .then(response => {
         const resData = response.data;
         console.log('Response');
