@@ -32,7 +32,7 @@ class Listing extends Component {
     });
 
     await axios
-      .get(`http://localhost:3001/listingsSearch/${this.props.searchInput}`)
+      .get(`http://gatorstate.tk/api/listingsSearch/${this.props.searchInput}`)
       .then(response => {
         const resData = response.data;
         console.log('Response');
