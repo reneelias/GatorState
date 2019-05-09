@@ -49,10 +49,15 @@ const Message = styled.h2`
     font-family: Coustard;
     
 `
+const Disclaimer = styled.h5`
+    margin: auto;
+    text-align:center;
+`
 
 export const Home = () => {
     return (
-        <div>
+        <div> 
+        <Disclaimer>SFSU Software Engineering Project CSC 648-848, Spring 2019.  For Demonstration Only</Disclaimer>
         <Navbar />
         <Greeting>
             <MessageBackground>
