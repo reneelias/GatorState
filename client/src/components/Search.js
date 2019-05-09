@@ -87,7 +87,7 @@ class Search extends Component {
                   {/* <Button variant="outline-primary"><Link to={{pathname:"/about", searchValue: searchInput}}>Search</Link></Button> */}
                   {/* <Button onClick={this.onSearchButtonClick} variant="outline-primary"><Link to="/about">Search</Link></Button> */}
                   
-                  {/* Link to connect to the result page after the submit button has been pressed *//}
+                  {/* Link to connect to the result page after the submit button has been pressed */}
 
                     <LinkButton to="/results" style={{ textDecoration: 'none', color: 'white' }}>Search</LinkButton>
                   
