@@ -10,7 +10,7 @@ import FilterSelection from './FilterSelection';
 
 import { connect } from 'react-redux';
 import { updateSearch } from '../components/redux/actions/searchActions';
-
+//Stlying the link to match other buttons 
 const LinkButton = styled(Link)`
   textDecoration: none;
   display: inline-block;
@@ -25,7 +25,7 @@ const LinkButton = styled(Link)`
     
 }
 `
-
+//Search component will handle taking the user input and pass it to the db to generate results.
 class Search extends Component {
   state = {
     searchInput: {
@@ -38,7 +38,7 @@ class Search extends Component {
       type: ''
     }
   };
-
+//Set the state based on the input in the search form.
   onSearchHandler = event => {
     const { searchInput } = this.state;
     this.setState({
@@ -66,25 +66,29 @@ class Search extends Component {
     // console.log(this.state);
     return (
       <div className="App">
+      //Search is called in Navbar 
           <Container style={{width: '600px'}}>
               <InputGroup>
+      //Prepend the filter before the search bar
               <InputGroup.Prepend>
                 <FilterSelection />
               </InputGroup.Prepend>
+      //Search bar 
                 <FormControl
-                  placeholder="Search by address, zipcode, or city..."
-                  
+                  placeholder="Search by address, zipcode, or city..."                  
                   // onChange={this.onSearchHandler}
                   onChange={e => {
                     this.props.updateSearch(e.target.value);
                   }}
                   //value={searchInput}
                 />
+                //Append the search button to the end of the search.
                 <InputGroup.Append>
                   {/* <Button variant="outline-primary"><Link to={{pathname:"/about", searchValue: searchInput}}>Search</Link></Button> */}
                   {/* <Button onClick={this.onSearchButtonClick} variant="outline-primary"><Link to="/about">Search</Link></Button> */}
                   
-                  
+                  {/* Link to connect to the result page after the submit button has been pressed *//}
+
                     <LinkButton to="/results" style={{ textDecoration: 'none', color: 'white' }}>Search</LinkButton>
                   
                 </InputGroup.Append>
@@ -94,7 +98,7 @@ class Search extends Component {
     );
   }
 }
-
+//Passing the search to the database
 const mapStateToProps = state => {
   // console.log(state);
   return {
