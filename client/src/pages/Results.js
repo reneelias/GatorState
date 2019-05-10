@@ -26,12 +26,12 @@ class Results extends Component {
       <div>
         {this.state.authenticate}
         <NavbarResultPage />
-        <Container fluid>
-          <Row>
+        <Container fluid >
+          <Row style={{background:"#AADAFF"}}>
             <Col className= "px-0">
               <Map />
             </Col>
-            <Col className= "px-0" style={{background:"#AADAFF"}}>
+            <Col className= "px-0" >
               <Listing searchInput={this.props.searchValue}/>
             </Col>
           </Row>
