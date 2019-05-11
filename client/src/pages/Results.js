@@ -57,6 +57,7 @@ class Results extends Component {
             this.state.todos.push({
               id: i,
               address: `${element.street_address}, ${element.zip_code}`,
+              zipcode: element.zip_code,
               price: element.price,
               distance: 3,
               date: '4/27/2019',
@@ -100,7 +101,10 @@ class Results extends Component {
         <Container fluid >
           <Row style={{ background: "#AADAFF" }}>
             <Col className="px-0">
-              <MapContainer />
+            {this.state.searchState === 'AUTHENTICATED' &&
+              this.state.todos.length != 0 && 
+              <MapContainer address={this.state.todos[0].address}/>
+            }
             </Col>
             <Col className="px-0" >
               <div>

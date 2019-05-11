@@ -8,20 +8,23 @@ const mapStyles = {
 
 Geocode.setApiKey("AIzaSyBe7J1RZpb8hX6N1zpT43hn9LvAnrx2o2k");
 
-Geocode.fromAddress().then(
-    response => {
-      const { lat, lng } = response.results[0].geometry.location;
-      console.log(lat, lng);
-    },
-    error => {
-      console.error(error);
-    }
-);
+// Geocode.fromAddress("Los Angeles").then(
+//     response => {
+//       const { lat, lng } = response.results[0].geometry.location;
+//       console.log(lat, lng);
+//     },
+//     error => {
+//       console.error(error);
+//     }
+// );
 export class MapContainer extends Component{
     state = {
         showingInfoWindow: false,
         activeMarker: {},
-        selectPlace: {}
+        selectPlace: {},
+        latS: 37.7219,
+        lngS: -122.4782,
+        authenticationState: 'DEFAULT',
     };
     //Used to show the info window pop up which is from 
     //the google-maps-react library
@@ -42,16 +45,44 @@ export class MapContainer extends Component{
         }
     }
 
+    componentDidMount(){
+        this.getGeoLoc();
+    }
+
+    getGeoLoc = address => {
+        console.log('Address:');
+        console.log(this.props.address);
+            Geocode.fromAddress(`${this.props.address}`).then(
+            response => {
+                console.log("response");
+                console.log(response.results);
+              const { lat, lng } = response.results[0].geometry.location;
+              this.setState({
+                 latS: lat,
+                 lngS: lng,
+                 authenticationState: 'AUTHENTICATED'
+              });
+              
+              console.log(lat, lng);
+            },
+            error => {
+              console.error(error);
+            }
+        );
+    };
+
     render(){
         return(
+            <div>
+                {this.state.authenticationState === 'AUTHENTICATED' && 
             <Map 
                 google= {this.props.google}
                 zoom={12}
                 style={mapStyles}
                 //Initial coordinates are set to SFSU
                 initialCenter={{
-                    lat: 37.7219,
-                    lng: -122.4782
+                    lat: this.state.latS,
+                    lng: this.state.lngS
                 }}
             >
             {/*When a marker is clicked it will display the address of what was clicked */}
@@ -71,6 +102,8 @@ export class MapContainer extends Component{
                     </div>
                 </InfoWindow>
             </Map>
+                }
+            </div>
         );
     }
 }
