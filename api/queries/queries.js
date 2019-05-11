@@ -9,7 +9,7 @@ const pool = new Pool({
 	// Enter username here:
 	user: 'postgres',
 	// Enter server address here
-	host: 'localhost',
+	host: 'gatorstate.tk',
 	// Enter which database you'd like to connect to
 	database: 'postgres',
 	// Enter password here
