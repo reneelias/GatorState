@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import Map from '../components/Map';
+import MapContainer from '../components/Map';
 import axios from 'axios';
 
 import { updateSearch } from '../components/redux/actions/searchActions';
@@ -29,7 +29,7 @@ class Results extends Component {
         <Container fluid >
           <Row style={{background:"#AADAFF"}}>
             <Col className= "px-0">
-              <Map />
+              <MapContainer />
             </Col>
             <Col className= "px-0" >
               <Listing searchInput={this.props.searchValue}/>

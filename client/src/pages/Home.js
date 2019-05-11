@@ -4,11 +4,7 @@ It will show this route when there's no specified path.
 
 import React from 'react';
 
-
 import Navbar from '../components/Navbar';
-import Search from '../components/Search';
-import Container from 'react-bootstrap/Container';
-import Jumbotron from 'react-bootstrap/Jumbotron';
 import styled from 'styled-components';
 import lib from 'images/lib.jpg';
 
@@ -66,8 +62,6 @@ export const Home = () => {
                 </Message>
             </MessageBackground>
         </Greeting>
-        
-        
         </div>
     );
 };
