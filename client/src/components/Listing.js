@@ -5,14 +5,6 @@ import Container from 'react-bootstrap/Container';
 import axios from 'axios';
 import {ResultText,ListingDiv} from './styled';
 
-<<<<<<< HEAD
-// const ResultText = styled.h1`
-//   font-size: 1.5em;
-//   text-align:center;
-
-// `
-=======
->>>>>>> b4e72a9ed9f11279d47458608fed1bbd3a18628a
 class Listing extends Component {
   state = {
     searchInput: '',
@@ -33,30 +25,7 @@ class Listing extends Component {
     
     return (
       <Container>
-<<<<<<< HEAD
-        <div>{listingCards}</div>
-=======
-        <div>
-        {this.state.searchState === 'LOADING' &&
-         <div><h1>Loading Listings</h1> 
-        {this.state.searchState} }
-         4 
-         {/* {this.state.data[0].street_address}  */}
-         </div>} 
-         {this.state.searchState === 'AUTHENTICATED' && 
-         <div>
-           <ResultText>
-            {/* Showing results for: {this.props.searchInput} */}
-            Number of results: {this.state.resultsTotal}
-            </ResultText>
         <ListingDiv>{listingCards}</ListingDiv>
-        </div>
-         } 
-         {this.state.searchState === 'DENIED' && 
-         <div>No results</div> 
-         } 
-        </div>
->>>>>>> b4e72a9ed9f11279d47458608fed1bbd3a18628a
       </Container>
     );
   }
