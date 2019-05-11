@@ -3,13 +3,8 @@ import ListingCard from './ListingCard';
 import PropTypes from 'prop-types';
 import Container from 'react-bootstrap/Container';
 import axios from 'axios';
-import styled from 'styled-components';
+import {ResultText} from './styled';
 
-const ResultText = styled.h1`
-  font-size: 1.5em;
-  text-align:center;
-
-`
 class Listing extends Component {
   state = {
     searchInput: '',

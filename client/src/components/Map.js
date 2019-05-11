@@ -3,13 +3,12 @@ import {Map, GoogleApiWrapper, InfoWindow, Marker} from 'google-maps-react';
 import Geocode from 'react-geocode';
 
 const mapStyles = {
-    width: '100%',
-    height: '100%',
+    height: '100vh',
 };
 
 Geocode.setApiKey("AIzaSyBe7J1RZpb8hX6N1zpT43hn9LvAnrx2o2k");
 
-Geocode.fromAddress("94132").then(
+Geocode.fromAddress().then(
     response => {
       const { lat, lng } = response.results[0].geometry.location;
       console.log(lat, lng);
