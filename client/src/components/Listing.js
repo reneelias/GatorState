@@ -3,7 +3,7 @@ import ListingCard from './ListingCard';
 import PropTypes from 'prop-types';
 import Container from 'react-bootstrap/Container';
 import axios from 'axios';
-import {ResultText} from './styled';
+import {ResultText,ListingDiv} from './styled';
 
 class Listing extends Component {
   state = {
@@ -115,7 +115,7 @@ class Listing extends Component {
             {/* Showing results for: {this.props.searchInput} */}
             Number of results: {this.state.resultsTotal}
             </ResultText>
-        <div>{listingCards}</div>
+        <ListingDiv>{listingCards}</ListingDiv>
         </div>
          } 
          {this.state.searchState === 'DENIED' && 

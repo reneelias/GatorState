@@ -6,6 +6,20 @@ export const ResultText = styled.h1`
 font-size: 1.5em;
 text-align:center;
 `
+export const ListingDiv = styled.div`
+    overflow: auto;
+    height: 100vh;
+`
+
+//ListingCard
+export const CardStyle = styled.div`
+    width: '100%',
+    background: 'grey',
+    padding: '1%',
+    border: '1px solid',
+    borderRadius: '3px',
+    margin: '5px'
+`
 //Home
 export const Greeting = styled.div`
     padding: 4em ;

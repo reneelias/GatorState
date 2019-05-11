@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import styled from 'styled-components';
+import {CardStyle} from './styled';
 
 export class ListingCard extends Component {
   render() {
@@ -29,15 +29,6 @@ export class ListingCard extends Component {
   }
 }
 
-
-const CardStyle = styled.div({
-  width: '100%',
-  background: 'grey',
-  padding: '1%',
-  border: '1px solid',
-  borderRadius: '3px',
-  margin: '5px'
-});
 //PropTypes
 ListingCard.propTypes = {
   todo: PropTypes.object.isRequired

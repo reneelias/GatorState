@@ -3,7 +3,7 @@ import {Map, GoogleApiWrapper, InfoWindow, Marker} from 'google-maps-react';
 import Geocode from 'react-geocode';
 
 const mapStyles = {
-    height: '100vh',
+    height: '100%',
 };
 
 Geocode.setApiKey("AIzaSyBe7J1RZpb8hX6N1zpT43hn9LvAnrx2o2k");
