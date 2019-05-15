@@ -3,8 +3,10 @@ import Navbar from 'react-bootstrap/Navbar';
 import Search from './Search';
 import Nav from 'react-bootstrap/Nav';
 import {NavButton} from './styled';
-
-
+import Register from './Register';
+import styled from 'styled-components';
+import Nav from 'react-bootstrap/Nav';
+import LoginModal from './LoginModal';
 
 class NavbarComp extends Component {
   render() {
@@ -20,8 +22,7 @@ class NavbarComp extends Component {
         </Nav>
         <Search />
         <Nav>
-          <NavButton href="/Login">Login</NavButton>&nbsp;
-          <NavButton>Registration</NavButton>&nbsp;
+        <LoginModal />
         </Nav>
         </Navbar>
       </div>
