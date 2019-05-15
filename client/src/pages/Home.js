@@ -4,35 +4,13 @@ It will show this route when there's no specified path.
 
 import React from 'react';
 
-
 import Navbar from '../components/Navbar';
-import Search from '../components/Search';
-import Container from 'react-bootstrap/Container';
-import Jumbotron from 'react-bootstrap/Jumbotron';
-import styled from 'styled-components';
-import lib from 'images/lib.jpg';
+import {Greeting,MessageBackground,Title,Message} from '../components/styled';
 
-const Greeting = styled.div`
-    padding: 4em ;
-    background-image: url(${lib});
-    background-position: 50%;
-    width: 100%;
-    height: 582px;
-    background-repeat: no-repeat;
-    background-color: grey;
-`
-const MessageBackground = styled.div`
-    
-    background:black;
-    margin: auto;
-    opacity: .9;
-    width: 45%;
-    border: 5px solid;
-    border-color:white;
-    position:relative;
-    
-`
-
+export const Home = () => {
+    return (
+        <div>
+      
 const Title = styled.h1`
     padding: 10px;
     font-size: 60px;
@@ -71,8 +49,6 @@ export const Home = () => {
                 </Message>
             </MessageBackground>
         </Greeting>
-        
-        
         </div>
     );
 };
