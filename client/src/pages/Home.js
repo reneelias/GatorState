@@ -6,27 +6,9 @@ import React from 'react';
 
 import Navbar from '../components/Navbar';
 import {Greeting,MessageBackground,Title,Message} from '../components/styled';
-
-export const Home = () => {
-    return (
-        <div>
+import styled from "styled-components";
       
-const Title = styled.h1`
-    padding: 10px;
-    font-size: 60px;
-    text-align: center;
-    color: white;
-    font-family: Coustard;
-    text-decoration: underline;
-`
-const Message = styled.h2`
-    padding: 10px;
-    font-size: 48px;
-    text-align: center;
-    color: white;
-    font-family: Coustard;
-    
-`
+
 const Disclaimer = styled.h5`
     margin: auto;
     text-align:center;
