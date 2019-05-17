@@ -6,18 +6,24 @@
 // Express
 const express = require('express');
 const app = express();
-const env = 'development';
-const config = require('./knexfile')[env];
-const knex = require('knex')(config);
+// const env = 'development';
+// const config = require('./knexfile')[env];
+// const knex = require('knex')(config);
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const port = process.env.PORT || 5000;
 
 app.use(cors());
-
+app.use(bodyParser.json());
+app.use(
+  bodyParser.urlencoded({
+    extended: true
+  })
+);
 // app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
-
+const routes_setter = require('./config/routes.js');
+routes_setter(app);
 // BodyParser
 
 // Server info
@@ -25,13 +31,6 @@ app.set('view engine', 'ejs');
 
 // PostgresQL
 // const db = require('./queries/queries');
-
-app.use(bodyParser.json());
-app.use(
-  bodyParser.urlencoded({
-    extended: true
-  })
-);
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
