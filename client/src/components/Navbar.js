@@ -4,8 +4,6 @@ import Search from './Search';
 import Nav from 'react-bootstrap/Nav';
 import {NavButton} from './styled';
 import Register from './Register';
-import styled from 'styled-components';
-import Nav from 'react-bootstrap/Nav';
 import LoginModal from './LoginModal';
 
 class NavbarComp extends Component {
