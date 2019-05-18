@@ -41,6 +41,7 @@ class Results extends Component {
     const searchInput = this.props.searchValue;
 
     if (searchInput === "" || searchInput === null || searchInput === undefined) {
+      // urlString = `http://gatorstate.tk/api/listings`;
       urlString = `http://gatorstate.tk/api/listings`;
     }
     else {
@@ -62,9 +63,9 @@ class Results extends Component {
               address: `${element.street_address}, ${element.zip_code}`,
               zipcode: element.zip_code,
               price: element.price,
-              distance: 3,
               date: '4/27/2019',
-              imgurl: `${element.images}`
+              imgurl: `${element.img_url}`,
+              homeType: element.home_type
             })
             i++;
 
