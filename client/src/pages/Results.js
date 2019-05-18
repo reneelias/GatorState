@@ -7,15 +7,9 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import MapContainer from '../components/Map';
 import axios from 'axios';
-import styled from 'styled-components';
-
+import {ResultText} from '../components/styled';
 import { updateSearch } from '../components/redux/actions/searchActions';
 
-const ResultText = styled.h1`
-  font-size: 1.5em;
-  text-align:center;
-
-`
 
 class Results extends Component {
   state = {
@@ -60,7 +54,7 @@ class Results extends Component {
       urlString = `http://gatorstate.tk/api/listingsSearch/${searchInput}`
       // urlString = `http://localhost:5000/listingsSearch/${searchInput}`;
     }
->>>>>>> a0e6460d521be3d3bc8d0bd646d17dc50f5785cd
+
     await axios
       .get(urlString)
       .then(response => {
