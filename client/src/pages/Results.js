@@ -40,13 +40,15 @@ class Results extends Component {
     var urlString;
     const searchInput = this.props.searchValue;
 
-    if (searchInput === "" || searchInput === null || searchInput === undefined) {
-      // urlString = `http://gatorstate.tk/api/listings`;
-      urlString = `http://gatorstate.tk/api/listings`;
-    }
-    else {
-      urlString = `http://gatorstate.tk/api/listingsSearch/${this.props.searchValue}`
-    }
+    urlString = `http://localhost:5000/listings`;
+
+    // if (searchInput === "" || searchInput === null || searchInput === undefined) {
+    //   // urlString = `http://gatorstate.tk/api/listings`;
+    //   urlString = `http://localhost:5000/listings`;
+    // }
+    // else {
+    //   urlString = `http://gatorstate.tk/api/listingsSearch/${this.props.searchValue}`
+    // }
     await axios
       .get(urlString)
       .then(response => {
@@ -64,7 +66,7 @@ class Results extends Component {
               zipcode: element.zip_code,
               price: element.price,
               date: '4/27/2019',
-              imgurl: `${element.img_url}`,
+              imgurl: `${element.image_url}`,
               homeType: element.home_type
             })
             i++;
