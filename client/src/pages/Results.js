@@ -40,7 +40,7 @@ class Results extends Component {
     var urlString;
     const searchInput = this.props.searchValue;
 
-    urlString = `http://localhost:5000/listings`;
+    urlString = `http://gatorstate.tk/api/listings`;
 
     // if (searchInput === "" || searchInput === null || searchInput === undefined) {
     //   // urlString = `http://gatorstate.tk/api/listings`;
