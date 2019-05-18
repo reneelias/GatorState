@@ -40,15 +40,27 @@ class Results extends Component {
     var urlString;
     const searchInput = this.props.searchValue;
 
-    urlString = `http://gatorstate.tk/api/listings`;
 
-    // if (searchInput === "" || searchInput === null || searchInput === undefined) {
-    //   // urlString = `http://gatorstate.tk/api/listings`;
+    // urlString = `http://gatorstate.tk/api/listings`;
+
+    if (searchInput === "" || searchInput === null || searchInput === undefined) {
+        urlString = `http://gatorstate.tk/api/listings`;
     //   urlString = `http://localhost:5000/listings`;
-    // }
-    // else {
-    //   urlString = `http://gatorstate.tk/api/listingsSearch/${this.props.searchValue}`
-    // }
+    }
+     else {
+         urlString = `http://gatorstate.tk/api/listingsSearch/${this.props.searchValue}`
+     }
+    // urlString = `http://localhost:5000/listings`;
+
+    if (searchInput === "" || searchInput === null || searchInput === undefined) {
+      urlString = `http://gatorstate.tk/api/listings`;
+      // urlString = `http://localhost:5000/listings`;
+    }
+    else {
+      urlString = `http://gatorstate.tk/api/listingsSearch/${searchInput}`
+      // urlString = `http://localhost:5000/listingsSearch/${searchInput}`;
+    }
+>>>>>>> a0e6460d521be3d3bc8d0bd646d17dc50f5785cd
     await axios
       .get(urlString)
       .then(response => {
@@ -65,6 +77,7 @@ class Results extends Component {
               address: `${element.street_address}, ${element.zip_code}`,
               zipcode: element.zip_code,
               price: element.price,
+              city: element.city,
               date: '4/27/2019',
               imgurl: `${element.image_url}`,
               homeType: element.home_type
