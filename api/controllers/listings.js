@@ -8,7 +8,7 @@ module.exports = {
     }
     knex('listings')
       .offset((page - 1) * 10)
-      .limit(10)
+      .limit(30)
       .then(results => {
         res.json(results);
       })
@@ -38,6 +38,31 @@ module.exports = {
    * * This will always be used*
    * ? This function will be renamed to grabListingByFromUser?
    */
+
+  searchListing: (req, res) => {
+    const searchReq = req.params.search.toLowerCase();
+    console.log(searchReq)
+    knex('listings')
+      .whereRaw(`LOWER(street_address) LIKE '%${searchReq}%' OR LOWER(city) LIKE '%${searchReq}%'`)
+      .then(results => {
+        if (results.length === 0) {
+          knex('listings')
+            .where('zip_code', req.params.search)
+            .then(results2 => {
+              res.json(results2);
+            })
+            .catch(err => {
+              res.status(400).search({ message: err });
+            });
+        }
+        else{
+          res.json(results);
+        }
+      })
+      .catch(err => {
+        res.status(400).search({ message: err });
+      });
+  },
 
   grabListing: (req, res) => {
     knex('listings')
