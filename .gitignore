@@ -1,4 +1,5 @@
 node_modules
+./config/secret
 .cache/
 dist/
 .env
