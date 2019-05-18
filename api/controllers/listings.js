@@ -17,10 +17,34 @@ module.exports = {
       });
   },
 
+  /**
+   * * But again this will just be for grabbing a listing*
+   * ? This function will do as it says?
+   */
+
+  // grabListing: (req, res) => {
+  //   knex('listings')
+  //     .where('id', req.params.id)
+  //     .first()
+  //     .then(results => {
+  //       res.json(results);
+  //     })
+  //     .catch(err => {
+  //       res.status(400).send({ message: err });
+  //     });
+  // },
+
+  /**
+   * * This will always be used*
+   * ? This function will be renamed to grabListingByFromUser?
+   */
+
   grabListing: (req, res) => {
     knex('listings')
-      .where('id', req.params.id)
-      .first()
+      .join('users', 'users.id', 'listings.user_id')
+      .select('listings.*', 'users.email')
+      .where('listings.id', req.params.id)
+      // .first()
       .then(results => {
         res.json(results);
       })
