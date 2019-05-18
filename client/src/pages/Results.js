@@ -37,7 +37,9 @@ class Results extends Component {
     });
 
     var urlString;
-    if (this.props.searchInput === "" || this.props.searchInput === null) {
+    const searchInput = this.props.searchInput;
+
+    if (searchInput === "" || searchInput === null || searchInput === undefined) {
       urlString = `http://gatorstate.tk/api/listings`;
     }
     else {
