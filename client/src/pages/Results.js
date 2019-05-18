@@ -94,8 +94,6 @@ class Results extends Component {
   };
 
   render() {
-
-
     return (
       <div>
         {/* {this.state.authenticate} */}
