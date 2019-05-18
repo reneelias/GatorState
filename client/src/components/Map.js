@@ -87,7 +87,7 @@ export class MapContainer extends Component{
                 <Marker
                     onClick={this.onMarkerClick}
                     position={this.props.location}
-                    name={'San Francisco State University'}
+                    name={this.props.address}
                 />
             {/*Info window displays address for marker when its clicked*/}
                 <InfoWindow

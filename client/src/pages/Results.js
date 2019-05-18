@@ -74,7 +74,8 @@ class Results extends Component {
               city: element.city,
               date: '4/27/2019',
               imgurl: `${element.image_url}`,
-              homeType: element.home_type
+              homeType: element.home_type,
+              description: element.description,
             })
             i++;
 
@@ -112,9 +113,11 @@ class Results extends Component {
         <Container fluid >
           <Row style={{ background: "#AADAFF" }}>
             <Col className="px-0">
+            
             {this.state.searchState === 'AUTHENTICATED' &&
-              this.state.todos.length != 0 && 
+              this.state.todos.length !== 0 && 
               <MapContainer address={this.state.todos[0].address}/>
+              
             }
             </Col>
             <Col className="px-0" >

@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
-import Listing from '../components/Listing';
-import NavbarResultPage from '../components/Navbar';
 import { connect } from 'react-redux';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import styled from "styled-components";
