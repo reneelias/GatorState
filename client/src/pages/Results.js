@@ -33,11 +33,12 @@ class Results extends Component {
 
   authenticate = async () => {
     this.setState({
-      searchState: 'LOADING'
+      searchState: 'LOADING',
+      searchInput: this.props.searchValue
     });
 
     var urlString;
-    const searchInput = this.props.searchInput;
+    const searchInput = this.props.searchValue;
 
     if (searchInput === "" || searchInput === null || searchInput === undefined) {
       urlString = `http://gatorstate.tk/api/listings`;
