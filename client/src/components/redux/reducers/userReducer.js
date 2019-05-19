@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-    user : {
+    user: {
         userid: '',
         username: '',
         firstName: '',
@@ -10,12 +10,18 @@ const INITIAL_STATE = {
 };
 
 const userReducer = (state = INITIAL_STATE, action) => {
-    switch (action.type){
+    switch (action.type) {
         case 'LOG_IN':
             return {
                 ...state,
                 user: action.user,
                 loggedIn: action.loggedIn
+            };
+        case 'LOG_OUT':
+            return {
+                ...state,
+                user: INITIAL_STATE.user,
+                loggedIn: false
             };
         default:
             return state;
