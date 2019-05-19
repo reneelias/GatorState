@@ -11,6 +11,7 @@ module.exports = app => {
   app.get('/user', users.verify);
   app.get('/listings', listings.index);
   app.get('/listings/:id', listings.grabListing);
+  app.get('/userListings/:userid', listings.grabUserListings);
   app.get('/listingsSearch/:search', listings.searchListing);
   app.post('/listings', listings.createListing);
   app.patch('/listings/:id', listings.updateListing);

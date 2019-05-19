@@ -5,6 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import { NavButton } from './styled';
 import LoginModal from './LoginModal';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 // import  {userReducer}  from './redux/reducers/userReducer'
 import { logoutUser } from '../components/redux/actions/userActions';
 
@@ -17,11 +18,8 @@ class NavbarComp extends Component {
     localStorage.removeItem('lastName')
     localStorage.removeItem('email')
     localStorage.removeItem('loggedIn')
-    // localStorage.clear();
-
-    // this.context.history.push('/')
+    
     this.props.logoutUser()
-    // this.props.loggedIn = false;
   }
 
   render() {
@@ -37,7 +35,7 @@ class NavbarComp extends Component {
         </Nav>
           <Search />
           <Nav>
-            {this.props.loggedIn ? <div><NavButton>Messages</NavButton><NavButton  >My Listings</NavButton><NavButton onClick={(e) => { this.logout() }}>Logout</NavButton></div> : <LoginModal />}
+            {this.props.loggedIn ? <div><NavButton>Messages</NavButton><Link to="/viewListings"><NavButton  to="/viewListings">My Listings</NavButton></Link><Link to="/"><NavButton onClick={(e) => { this.logout() }}>Logout</NavButton></Link></div> : <LoginModal />}
           </Nav>
         </Navbar>
       </div>

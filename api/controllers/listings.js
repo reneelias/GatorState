@@ -78,6 +78,19 @@ module.exports = {
       });
   },
 
+  grabUserListings: (req, res) => {
+    knex('listings')
+      .select('listings.*')
+      .where('listings.user_id', req.params.userid)
+      // .first()
+      .then(results => {
+        res.json(results);
+      })
+      .catch(err => {
+        res.status(400).send({ message: err });
+      });
+  },
+
   createListing: (req, res) => {
     knex('listings')
       .insert(

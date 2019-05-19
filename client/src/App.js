@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import Results from '../src/pages/Results';
 import LoginPage from '../src/pages/LoginPage';
 import RegistrationPage from '../src/pages/RegistrationPage';
+import ViewListings from '../src/pages/ViewListings'
 import Navbar from 'react-bootstrap/Navbar';
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
             <Route path="/results" component={Results} />
             <Route path="/login" component={LoginPage} />
             <Route path="/register" component={RegistrationPage} />
+            <Route path="/viewListings" component={ViewListings} />
           </Switch>
         </div>
       </BrowserRouter>
