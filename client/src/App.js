@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Home } from '../src/pages/Home';
+import Home from '../src/pages/Home';
 import { connect } from 'react-redux';
 import Results from '../src/pages/Results';
 import LoginPage from '../src/pages/LoginPage';
 import RegistrationPage from '../src/pages/RegistrationPage';
+import Navbar from 'react-bootstrap/Navbar';
 
 class App extends Component {
   render() {
     console.log(this.state);
     return (
+      <div>
       <BrowserRouter>
         <div className="App">
+        {/* <Navbar /> */}
           <Route exact path="/" component={Home} />
           <Switch>
             <Route path="/results" component={Results} />
@@ -20,6 +23,7 @@ class App extends Component {
           </Switch>
         </div>
       </BrowserRouter>
+      </div>
     );
   }
 }

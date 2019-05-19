@@ -21,8 +21,7 @@ class NavbarComp extends Component {
         </Nav>
         <Search />
         <Nav>
-        {!this.props.loggedIn && <LoginModal />}
-        {}
+        {this.props.loggedIn ? <div><NavButton>Messages</NavButton><NavButton>My Listings</NavButton><NavButton>Logout</NavButton></div> : <LoginModal />}
         </Nav>
         </Navbar>
       </div>
@@ -33,6 +32,7 @@ class NavbarComp extends Component {
 const mapStateToProps = state => {
   console.log('login mapStateToProps')
   console.log(state);
+  
   return {
       user: state.userReducer.user,
       loggedIn: state.userReducer.loggedIn

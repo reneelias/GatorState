@@ -91,6 +91,13 @@ class LoginPage extends Component {
             console.log('state user:')
             console.log(this.state.user)
             this.props.loginUser(this.state.user, this.state.loggedIn)
+
+            localStorage.setItem('userid', this.state.user.userid)
+            localStorage.setItem('username', this.state.user.username)
+            localStorage.setItem('firstName', this.state.user.firstName)
+            localStorage.setItem('lastName', this.state.user.lastName)
+            localStorage.setItem('email', this.state.user.email)
+            localStorage.setItem('loggedIn', this.state.loggedIn)
         }
     }
 
@@ -132,6 +139,7 @@ class LoginPage extends Component {
 const mapStateToProps = state => {
     console.log('login mapStateToProps')
     console.log(state);
+
     return {
         user: state.userReducer.user,
         loggedIn: state.userReducer.loggedIn
