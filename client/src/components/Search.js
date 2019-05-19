@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
 import InputGroup from 'react-bootstrap/InputGroup';
-import Button from 'react-bootstrap/Button';
 import FormControl from 'react-bootstrap/FormControl';
 import styled from 'styled-components'
 import { Link } from 'react-router-dom';

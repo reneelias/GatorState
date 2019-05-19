@@ -7,15 +7,9 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import MapContainer from '../components/Map';
 import axios from 'axios';
-import styled from 'styled-components';
-
+import {ResultText} from '../components/styled';
 import { updateSearch } from '../components/redux/actions/searchActions';
 
-const ResultText = styled.h1`
-  font-size: 1.5em;
-  text-align:center;
-
-`
 
 class Results extends Component {
   state = {
@@ -40,6 +34,16 @@ class Results extends Component {
     var urlString;
     const searchInput = this.props.searchValue;
 
+
+    // urlString = `http://gatorstate.tk/api/listings`;
+
+    if (searchInput === "" || searchInput === null || searchInput === undefined) {
+        urlString = `http://gatorstate.tk/api/listings`;
+    //   urlString = `http://localhost:5000/listings`;
+    }
+     else {
+         urlString = `http://gatorstate.tk/api/listingsSearch/${this.props.searchValue}`
+     }
     // urlString = `http://localhost:5000/listings`;
 
     if (searchInput === "" || searchInput === null || searchInput === undefined) {
@@ -50,6 +54,7 @@ class Results extends Component {
       urlString = `http://gatorstate.tk/api/listingsSearch/${searchInput}`
       // urlString = `http://localhost:5000/listingsSearch/${searchInput}`;
     }
+
     await axios
       .get(urlString)
       .then(response => {
@@ -69,7 +74,8 @@ class Results extends Component {
               city: element.city,
               date: '4/27/2019',
               imgurl: `${element.image_url}`,
-              homeType: element.home_type
+              homeType: element.home_type,
+              description: element.description,
             })
             i++;
 
@@ -107,10 +113,12 @@ class Results extends Component {
         <Container fluid >
           <Row style={{ background: "#AADAFF" }}>
             <Col className="px-0">
-              {this.state.searchState === 'AUTHENTICATED' &&
-                this.state.todos.length != 0 &&
-                <MapContainer address={this.state.todos[0].address} />
-              }
+            
+            {this.state.searchState === 'AUTHENTICATED' &&
+              this.state.todos.length !== 0 && 
+              <MapContainer address={this.state.todos[0].address}/>
+              
+            }
             </Col>
             <Col className="px-0" >
               <div>

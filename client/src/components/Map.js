@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import {Map, GoogleApiWrapper, InfoWindow, Marker} from 'google-maps-react';
 import Geocode from 'react-geocode';
+import {mapStyles} from './styled';
 
-const mapStyles = {
-    height: '100%',
-};
 
 Geocode.setApiKey("AIzaSyBe7J1RZpb8hX6N1zpT43hn9LvAnrx2o2k");
 
@@ -89,7 +87,7 @@ export class MapContainer extends Component{
                 <Marker
                     onClick={this.onMarkerClick}
                     position={this.props.location}
-                    name={'San Francisco State University'}
+                    name={this.props.address}
                 />
             {/*Info window displays address for marker when its clicked*/}
                 <InfoWindow

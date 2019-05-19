@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import Listing from '../components/Listing';
-import NavbarResultPage from '../components/Navbar';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-
 import axios from 'axios';
 
 const RegDiv = styled.div`

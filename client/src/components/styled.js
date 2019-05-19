@@ -10,7 +10,10 @@ export const ListingDiv = styled.div`
     overflow: auto;
     height: 100vh;
 `
-
+//Map
+export const mapStyles = {
+    height: '100%',
+};
 //ListingCard
 export const CardStyle = styled.div`
     width: '100%',

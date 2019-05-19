@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React,{Component} from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import LoginPage from '../pages/LoginPage';
 import RegistrationPage from '../pages/RegistrationPage';
 
-class LoginModal extends React.Component {
+class LoginModal extends Component {
     constructor(props, context) {
       super(props, context);
   

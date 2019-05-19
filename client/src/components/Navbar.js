@@ -3,8 +3,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import Search from './Search';
 import Nav from 'react-bootstrap/Nav';
 import {NavButton} from './styled';
-import Register from './Register';
-import styled from 'styled-components';
 import LoginModal from './LoginModal';
 import { connect } from 'react-redux';
 // import  {userReducer}  from './redux/reducers/userReducer'
