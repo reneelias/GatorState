@@ -8,7 +8,25 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 // import  {userReducer}  from './redux/reducers/userReducer'
 import { logoutUser } from '../components/redux/actions/userActions';
+import styled from 'styled-components';
 
+
+
+const LinkButton = styled(Link)`
+  display: inline-block;
+  font-size: 1em;
+  color: white;
+  //background: rgb(0, 123, 255);
+  border: none;
+  border-radius: 3px;
+  font: sans serif;
+  line-height: 30px;
+  text-align: center;
+  //margin: auto;
+  padding: 0.25em 1em;
+  background: rgb(0, 123, 255);
+}
+`
 class NavbarComp extends Component {
 
   logout = e => {
@@ -30,12 +48,16 @@ class NavbarComp extends Component {
             <Navbar.Brand style={{ color: 'white' }} href="/">
               GatorState
           </Navbar.Brand>
-            <NavButton>About</NavButton>&nbsp;
-          <NavButton href="/UploadListing">Post</NavButton>&nbsp;
+            {/* <NavButton>About</NavButton>&nbsp; */}
+          {/* <NavButton href="/UploadListing">Post</NavButton>&nbsp; */}
+
         </Nav>
           <Search />
           <Nav>
-            {this.props.loggedIn ? <div><NavButton>Messages</NavButton><Link to="/viewListings"><NavButton  to="/viewListings">My Listings</NavButton></Link><Link to="/"><NavButton onClick={(e) => { this.logout() }}>Logout</NavButton></Link></div> : <LoginModal />}
+           <LinkButton to="/uploadlistings" style={{ textDecoration: 'none', color: 'white' }}>Post</LinkButton>&nbsp;
+
+            {this.props.loggedIn ? <div><NavButton>Messages</NavButton><Link to="/viewListings">
+            <NavButton  to="/viewListings">My Listings</NavButton></Link><Link to="/"><NavButton onClick={(e) => { this.logout() }}>Logout</NavButton></Link></div> : <LoginModal />}
           </Nav>
         </Navbar>
       </div>
