@@ -17,7 +17,8 @@ class RegistrationPage extends Component {
                 firstName: '',
                 lastName: '',
                 username: '',
-                password: ''
+                password: '',
+                TOS: ''
             },
             submitted: false
         };
@@ -87,7 +88,7 @@ class RegistrationPage extends Component {
                         <label htmlFor="username">Username</label>
                         <input type="text" className="form-control" name="username" value={user.username} onChange={this.handleChange} />
                         {submitted && !user.username &&
-                            <div className="help-block">*Username is required</div>
+                            <div className="help-block" stylecolor="red">*Username is required</div>
                         }
                     </div>
                     <div className={'form-group' + (submitted && !user.password ? ' has-error' : '')}>
@@ -97,6 +98,15 @@ class RegistrationPage extends Component {
                             <div className="help-block">*Password is required</div>
                         }
                     </div>
+{/* terms of service checkbox */}
+                     <div className={'form-group' + (submitted ? ' has-error' : '')}>
+                        <label htmlFor="TOS">I have read the Terms of Service.</label>
+                        <input type="checkbox" className="form-control" name="TOS" onChange={this.handleChange} />
+                        {submitted && !user.TOS &&
+                            <div className="help-block">*required</div>
+                        }
+                    </div>
+{/* terms of service checkbox */}
                     <div className="form-group">
                         <button className="btn btn-primary">Register</button>
                         {registering &&
