@@ -96,7 +96,8 @@ class Search extends Component {
 }
 
 const mapStateToProps = state => {
-  // console.log(state);
+  console.log('map state to props:')
+  console.log(state);
   return {
     searchValue: state.searchReducer.searchValue
   };

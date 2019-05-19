@@ -6,6 +6,8 @@ import {NavButton} from './styled';
 import Register from './Register';
 import styled from 'styled-components';
 import LoginModal from './LoginModal';
+import { connect } from 'react-redux';
+// import  {userReducer}  from './redux/reducers/userReducer'
 
 class NavbarComp extends Component {
   render() {
@@ -21,7 +23,8 @@ class NavbarComp extends Component {
         </Nav>
         <Search />
         <Nav>
-        <LoginModal />
+        {!this.props.loggedIn && <LoginModal />}
+        {}
         </Nav>
         </Navbar>
       </div>
@@ -29,4 +32,21 @@ class NavbarComp extends Component {
   }
 }
 
-export default NavbarComp;
+const mapStateToProps = state => {
+  console.log('login mapStateToProps')
+  console.log(state);
+  return {
+      user: state.userReducer.user,
+      loggedIn: state.userReducer.loggedIn
+  };
+};
+
+const mapDispatchToProps = {
+  // loginUser
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(NavbarComp);
+

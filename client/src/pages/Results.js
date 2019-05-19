@@ -107,10 +107,10 @@ class Results extends Component {
         <Container fluid >
           <Row style={{ background: "#AADAFF" }}>
             <Col className="px-0">
-            {this.state.searchState === 'AUTHENTICATED' &&
-              this.state.todos.length != 0 && 
-              <MapContainer address={this.state.todos[0].address}/>
-            }
+              {this.state.searchState === 'AUTHENTICATED' &&
+                this.state.todos.length != 0 &&
+                <MapContainer address={this.state.todos[0].address} />
+              }
             </Col>
             <Col className="px-0" >
               <div>
@@ -120,9 +120,9 @@ class Results extends Component {
                 {this.state.searchState === 'AUTHENTICATED' &&
                   <div>
                     <ResultText>
-                       Number of results: {this.state.resultsTotal}
+                      Number of results: {this.state.resultsTotal}
                     </ResultText>
-                    
+
                     <Listing todos={this.state.todos} />
                   </div>
                 }

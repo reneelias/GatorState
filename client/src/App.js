@@ -27,7 +27,9 @@ const mapStateToProps = state => {
   console.log(state);
   return {
     // searchValue: 'hey',
-    searchValue: state.searchReducer.searchValue
+    searchValue: state.searchReducer.searchValue,
+    user: state.userReducer.user,
+    loggedIn: state.userReducer.loggedIn
   };
 };
 

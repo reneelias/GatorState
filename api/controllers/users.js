@@ -10,16 +10,17 @@ module.exports = {
       knex('users')
         .insert(
           {
-            first_name: user.first_name,
-            last_name: user.last_name,
-            email: user.email,
+            first_name: user.firstName,
+            last_name: user.lastName,
+            email: 'no email to see',
+            username: user.username,
             password: user.password
           },
           'id'
         )
         .then(results => {
           res.json({
-            message: 'Successfully registered, please log in',
+            message: `Welcome ${user.firstName}! You successfully registered, please log in`,
             id: results[0]
           });
         })
@@ -31,7 +32,8 @@ module.exports = {
 
   login: (req, res) => {
     knex('users')
-      .where('email', req.body.email)
+      // .where('email', req.body.email)
+      .where('username', req.body.username)
       .first()
       .then(user => {
         if (user) {
@@ -41,15 +43,15 @@ module.exports = {
               delete user.password;
               res.json({ message: 'Successfully signed in', token, user });
             } else {
-              res.status(400).send({ message: 'Invalid Email / Password' });
+              res.status(400).send({ message: 'Invalid Username / Password' });
             }
           });
         } else {
-          res.status(400).send({ message: 'Invalid Email / Password' });
+          res.status(400).send({ message: 'Invalid Username / Password' });
         }
       })
       .catch(err => {
-        res.status(400).send({ message: 'Invalid Email / Password' });
+        res.status(400).send({ message: 'Invalid Username / Password' });
       });
   },
 
