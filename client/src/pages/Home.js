@@ -10,6 +10,7 @@ import styled from "styled-components";
 
 import { connect } from 'react-redux';
 import { loginUser } from '../components/redux/actions/userActions';
+import About from '../components/About';
 
 const Disclaimer = styled.h5`
     margin: auto;
@@ -61,6 +62,7 @@ class Home extends Component {
                         <Title>
                             Gator State
                 </Title>
+<<<<<<< HEAD
                         <Message>
                             Find your home away from home.<br />
                         </Message>
@@ -91,3 +93,16 @@ export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(Home);
+=======
+                <Message>
+                    Find your home away from home.<br />
+                    
+                    
+                </Message>
+            </MessageBackground>
+        </Greeting>
+        <About/>
+        </div>
+    );
+};
+>>>>>>> 6c21f0aea37da5b9f7cd930506768060e92124ec
