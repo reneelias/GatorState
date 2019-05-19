@@ -63,13 +63,14 @@ export const Message = styled.h2`
 `
 //Navbar
 export const NavButton = styled.button`
-display: inline-block;
-font-size: 1em;
-color: white;
-background: rgb(0, 123, 255);
-border: none;
-border-radius: 3px;
-font: sans serif;
-text-align: center;
-line-height: 36px;
+    display: inline-block;
+    font-size: 1em;
+    color: white;
+    background: rgb(0, 123, 255);
+    border: none;
+    border-radius: 3px;
+    font: sans serif;
+    text-align: center;
+    line-height: 36px;
+    margin: 0 .25em;
 `

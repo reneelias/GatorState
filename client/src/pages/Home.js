@@ -7,7 +7,7 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import {Greeting,MessageBackground,Title,Message} from '../components/styled';
 import styled from "styled-components";
-      
+import About from '../components/About';
 
 const Disclaimer = styled.h5`
     margin: auto;
@@ -31,6 +31,7 @@ export const Home = () => {
                 </Message>
             </MessageBackground>
         </Greeting>
+        <About/>
         </div>
     );
 };

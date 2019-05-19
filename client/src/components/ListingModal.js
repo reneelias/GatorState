@@ -17,7 +17,7 @@ export default class ListingModal extends Component{
         let lgClose = () => this.setState({lgShow: false});     
         return(
             <div>
-            <Button onClick={() => this.setState({lgShow: true})}>View Listing Details</Button>
+            <Button block onClick={() => this.setState({lgShow: true})}>View Listing Details</Button>
             <Modal
             size="lg"
             show={this.state.lgShow}
