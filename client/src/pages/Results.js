@@ -8,7 +8,7 @@ import Container from 'react-bootstrap/Container';
 import MapContainer from '../components/Map';
 import axios from 'axios';
 import {ResultText} from '../components/styled';
-import { updateSearch } from '../components/redux/actions/searchActions';
+import { updateSearch, finishedSearch, submittedSearch } from '../components/redux/actions/searchActions';
 
 
 class Results extends Component {
@@ -24,6 +24,7 @@ class Results extends Component {
   componentDidMount() {
     this.authenticate();
   }
+  
 
   authenticate = async () => {
     this.setState({
@@ -63,6 +64,9 @@ class Results extends Component {
         console.log(response);
         console.log(response.data);
         var i = 1;
+        this.setState({
+          todos: []
+        });
 
         if (resData[0].street_address != null) {
           (resData).forEach(element => {
@@ -89,6 +93,7 @@ class Results extends Component {
           });
           console.log('Stuffs was authenticated');
           console.log(this.state.todos);
+
         }
         else {
           this.setState({
@@ -103,9 +108,19 @@ class Results extends Component {
           searchState: 'DENIED'
         });
       });
+
+      this.props.finishedSearch();
+      // this.props.searchState = 'SEARCH_FINISHED';
   };
 
   render() {
+    if(this.props.searchState === 'SEARCH_SUBMITTED' && this.state.searchState !== 'LOADING')
+    {
+        this.authenticate();
+    }
+
+    console.log('Search State:')
+    console.log(this.props.searchState)
     return (
       <div>
         {/* {this.state.authenticate} */}
@@ -149,12 +164,15 @@ class Results extends Component {
 const mapStateToProps = state => {
   // console.log(state);
   return {
-    searchValue: state.searchReducer.searchValue
+    searchValue: state.searchReducer.searchValue,
+    searchState: state.searchReducer.searchState
   };
 };
 
 const mapDispatchToProps = {
-  updateSearch
+  updateSearch,
+  finishedSearch,
+  submittedSearch
 };
 
 export default connect(

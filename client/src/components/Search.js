@@ -8,7 +8,7 @@ import { withRouter } from 'react-router';
 import FilterSelection from './FilterSelection';
 
 import { connect } from 'react-redux';
-import { updateSearch } from '../components/redux/actions/searchActions';
+import { updateSearch, finishedSearch, submittedSearch } from '../components/redux/actions/searchActions';
 
 const LinkButton = styled(Link)`
   textDecoration: none;
@@ -42,53 +42,38 @@ class Search extends Component {
     const { searchInput } = this.state;
     this.setState({
       searchInput: event.target.value
-      // {
-      //   "address": event.target.value,
-      //   "zipcode": event.target.value,
-      //   "city": event.target.value
-      // }
     });
 
     console.log(searchInput);
   };
 
-  // onSearchButtonClick = event => {
-  //   const {searchInput} = this.state;
-  //   this.setState({
-  //     "searchInput" : event.target.value
-  //   })
-  //   updateSearch(searchInput);
-  // }
+  onSearchButtonClick = e => {
+    this.props.submittedSearch();
+  }
+
 
   render() {
     const { searchInput } = this.state;
     // console.log(this.state);
     return (
       <div className="App">
-          <Container style={{width: '600px'}}>
-              <InputGroup>
-              <InputGroup.Prepend>
-                <FilterSelection />
-              </InputGroup.Prepend>
-                <FormControl
-                  placeholder="Search by address, zipcode, or city..."
-                  
-                  // onChange={this.onSearchHandler}
-                  onChange={e => {
-                    this.props.updateSearch(e.target.value);
-                  }}
-                  //value={searchInput}
-                />
-                <InputGroup.Append>
-                  {/* <Button variant="outline-primary"><Link to={{pathname:"/about", searchValue: searchInput}}>Search</Link></Button> */}
-                  {/* <Button onClick={this.onSearchButtonClick} variant="outline-primary"><Link to="/about">Search</Link></Button> */}
-                  
-                  
-                    <LinkButton to="/results" style={{ textDecoration: 'none', color: 'white' }}>Search</LinkButton>
-                  
-                </InputGroup.Append>
-              </InputGroup>
-          </Container>
+        <Container style={{ width: '600px' }}>
+          <InputGroup >
+            <InputGroup.Prepend>
+              <FilterSelection />
+            </InputGroup.Prepend>
+            <FormControl
+              type='submit'
+              placeholder="Search by address, zipcode, or city..."
+              onChange={e => {
+                this.props.updateSearch(e.target.value);
+              }}
+            />
+            <InputGroup.Append>
+              <LinkButton to="/results" onClick={(e) => { this.onSearchButtonClick() }} style={{ textDecoration: 'none', color: 'white' }}>Search</LinkButton>
+            </InputGroup.Append>
+          </InputGroup>
+        </Container>
       </div>
     );
   }
@@ -98,12 +83,15 @@ const mapStateToProps = state => {
   console.log('map state to props:')
   console.log(state);
   return {
-    searchValue: state.searchReducer.searchValue
+    searchValue: state.searchReducer.searchValue,
+    searchState: state.searchReducer.searchState
   };
 };
 
 const mapDispatchToProps = {
-  updateSearch
+  updateSearch,
+  finishedSearch,
+  submittedSearch
 };
 // function searchButtonClick()  {
 //   const {searchInput} = this.state;
