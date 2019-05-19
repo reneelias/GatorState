@@ -63,7 +63,6 @@ class Search extends Component {
               <FilterSelection />
             </InputGroup.Prepend>
             <FormControl
-              type='submit'
               placeholder="Search by address, zipcode, or city..."
               onChange={e => {
                 this.props.updateSearch(e.target.value);
