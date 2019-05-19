@@ -63,6 +63,9 @@ class About extends Component{
                         <ListGroupItem >
                             <Card.Link href= "https://github.com/itsdsun">Github</Card.Link>
                         </ListGroupItem>
+                        <ListGroupItem >
+                            <Card.Link href= "https://www.linkedin.com/in/daisy-sun-06388817b/">LinkedIn</Card.Link>
+                        </ListGroupItem>
                     </ListGroup>
                 </Card.Body>
             </Card>
