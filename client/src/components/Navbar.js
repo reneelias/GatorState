@@ -44,29 +44,34 @@ class NavbarComp extends Component {
   render() {
     return (
       <div>
-        <Navbar bg="dark" className="justify-content-between" style={{ width: "auto" }}>
-          <Nav >
-            <Navbar.Brand style={{ color: 'white' }} href="/">
-              GatorState
+        <Navbar bg="dark" className="justify-content-between" expand="lg">
+          
+          <Navbar.Brand style={{ color: 'white' }} href="/">
+            GatorState
           </Navbar.Brand>
-            {/* <NavButton>About</NavButton>&nbsp; */}
-          {/* <NavButton href="/UploadListing">Post</NavButton>&nbsp; */}
 
-        </Nav>
           <Search />
-          <Nav>
 
+          <Nav >
+          <Navbar.Collapse>
             {/* Post Button */}
            <LinkButton to="/uploadlistings" style={{ textDecoration: 'none', color: 'white' }}>Post</LinkButton>&nbsp;
            {/* Messages Button */}
-            {this.props.loggedIn ? <div><NavButton>Messages</NavButton><Link to="/viewListings">
+            {this.props.loggedIn ? 
+            <div><NavButton>Messages</NavButton>
+            <Link to="/viewListings">
             {/* My Listings Button */}
-            <NavButton  to="/viewListings">My Listings</NavButton></Link><Link to="/">
+            <NavButton  to="/viewListings">My Listings</NavButton></Link>
+            <Link to="/">
             {/* Login Button */}
-            <NavButton onClick={(e) => { this.logout() }}>Logout</NavButton></Link></div> : <LoginModal />}
+            <NavButton onClick={(e) => { this.logout() }}>Logout</NavButton>
+            </Link></div>
+            : <LoginModal/>} 
             {/* Register Button */}
-            <RegisterModal/>
+            {this.props.loggedIn ? "" : <RegisterModal/>}
+          </Navbar.Collapse>
           </Nav>
+          <Navbar.Toggle style={{color:'white'}} aria-controls="basic-navbar-nav" />
         </Navbar>
       </div>
     );

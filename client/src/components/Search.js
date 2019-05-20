@@ -57,12 +57,13 @@ class Search extends Component {
     // console.log(this.state);
     return (
       <div className="App">
-        <Container style={{ width: '600px' }}>
+        <Container fluid>
           <InputGroup >
             <InputGroup.Prepend>
               <FilterSelection />
             </InputGroup.Prepend>
             <FormControl
+              style={{width:'300px'}}
               placeholder="Search by address, zipcode, or city..."
               onChange={e => {
                 this.props.updateSearch(e.target.value);
