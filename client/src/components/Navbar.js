@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Search from './Search';
+import Nav from 'react-bootstrap/Nav';
+import {NavButton} from './styled';
+import Register from './Register';
+import LoginModal from './LoginModal';
 import Register from './Register';
 import styled from 'styled-components';
 import Nav from 'react-bootstrap/Nav';
