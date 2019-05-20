@@ -10,7 +10,10 @@ export const ListingDiv = styled.div`
     overflow: auto;
     height: 100vh;
 `
-
+//Map
+export const mapStyles = {
+    height: '100%',
+};
 //ListingCard
 export const CardStyle = styled.div`
     width: '100%',
@@ -63,13 +66,27 @@ export const Disclaimer = styled.h5`
 `
 //Navbar
 export const NavButton = styled.button`
-display: inline-block;
-font-size: 1em;
-color: white;
-background: rgb(0, 123, 255);
-border: none;
-border-radius: 3px;
-font: sans serif;
-text-align: center;
-line-height: 36px;
+    display: inline-block;
+    font-size: 1em;
+    color: white;
+    background: rgb(0, 123, 255);
+    border: none;
+    border-radius: 3px;
+    font: sans serif;
+    text-align: center;
+    line-height: 36px;
+    margin: 0 .25em;
+`
+
+//Upload Listing
+export const UploadListingButton = styled.button`
+  background-color: #4caf50; /* Green */
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 `

@@ -3,7 +3,7 @@ import ListingCard from './ListingCard';
 import PropTypes from 'prop-types';
 import Container from 'react-bootstrap/Container';
 import axios from 'axios';
-import {ResultText,ListingDiv} from './styled';
+import {ListingDiv} from './styled';
 
 class Listing extends Component {
   state = {
@@ -11,6 +11,9 @@ class Listing extends Component {
     todos: [],
   };
 
+  listingCardClicked = e => {
+    alert('Clicked')
+  }
 
   //In this render method we map the todos array to another component that extracts
   //the info and displays them in a card

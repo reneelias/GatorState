@@ -2,9 +2,9 @@ import React,{Component} from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
-import RegistrationPage from '../pages/RegistrationPage';
+import ContactSeller from '../components/ContactSeller';
 
-class RegisterModal extends Component {
+class ContactModal extends Component {
     constructor(props, context) {
       super(props, context);
   
@@ -19,10 +19,11 @@ class RegisterModal extends Component {
       return (
         <ButtonToolbar>
           <Button onClick={() => this.setState({ regShow: true })}>
-            Register 
+            Contact Seller
           </Button>
   
           <Modal
+            size= "lg"
             show={this.state.regShow}
             onHide={regClose}
             aria-labelledby="example-modal-sizes-title-sm"
@@ -30,14 +31,14 @@ class RegisterModal extends Component {
             
             <Modal.Header closeButton>
               <Modal.Title id="example-modal-sizes-title-lg">
-                Register
+                Contact Seller
               </Modal.Title>
             </Modal.Header>
-            <Modal.Body> <RegistrationPage /> </Modal.Body>
+            <Modal.Body> <ContactSeller/> </Modal.Body>
           </Modal>
         </ButtonToolbar>
       );
     }
   }
 
- export default RegisterModal;
+ export default ContactModal;
