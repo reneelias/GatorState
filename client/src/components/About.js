@@ -15,8 +15,11 @@ class About extends Component{
     render(){
         return(
             <Jumbotron > 
-                <h1 style={{textAlign:"center"}}> Team 06 </h1>
-                <Container fluid>
+                <h1 style={{textAlign:"center"}}> About </h1>
+                <p> </p>
+                <h3 style={{textAlign:"center"}}> Meet The Team </h3>
+                <Container style={{flexDirection: 'row'}}>
+                <Container style={{flexDirection: 'column'}}>
                 <Row style={{marginBottom: "10px"}}>
                     <Col >
                     <Card >
@@ -35,7 +38,7 @@ class About extends Component{
                     <Col>
                     <Card >
                         <Card.Header><Names>Front End Lead</Names></Card.Header>
-                        <Card.Img src="http://www.simpleimageresizer.com/_uploads/photos/0c4f8132/WGZzg1P_400x400.jpg"  />
+                        <Card.Img src="https://user-images.githubusercontent.com/25631925/57999956-1d792700-7a8c-11e9-840b-a6d6dbba9d2c.jpg"  />
                         <Names>Jonathan Gurdal</Names>
                         <Card.Footer>
                             <Nav className="justify-content-center">
@@ -50,7 +53,7 @@ class About extends Component{
                     <Card >
                         <Card.Header><Names>Back End Lead</Names></Card.Header> 
                         <Card.Img src="https://i.imgur.com/KPSQ3N8.jpg"  />
-                        <Names>Marlong Johnson</Names>
+                        <Names>Marlon Johnson</Names>
                         <Card.Footer>
                             <Nav className="justify-content-center">
                                 <Nav.Link href = "mailto:johnsonmarlon18@gmail.com">Email</Nav.Link>
@@ -74,6 +77,11 @@ class About extends Component{
                                 </Card.Footer>
                             </Card>
                         </Col>
+                        </Row>
+                    </Container>
+                        <Container style={{flexDirection: 'column'}}> 
+                     <Row style={{marginBottom: "10px"}}>
+
                     <Col>
                         <Card >
                             <Card.Header><Names>Full Stack</Names></Card.Header> 
@@ -118,6 +126,7 @@ class About extends Component{
                     </Col>
                     </Row>
 
+                </Container>
                 </Container>
             </Jumbotron>
         )

@@ -55,6 +55,7 @@ class UploadListing extends Component {
             <div>
                 <Navbar/>
                     <div align="center"> 
+                    <p> </p>
                     <h1>Upload Listing</h1>
                     <div>
                     <form class="needs-validation" novalidate >
@@ -172,7 +173,7 @@ class UploadListing extends Component {
 
                         {/* <button class="btn btn-primary" type="submit">Submit form</button> */}
                         <UploadListingButton type="submit">Upload Listing</UploadListingButton>
-
+                        <h1> </h1>
                         
                     </form>
                     </div>
