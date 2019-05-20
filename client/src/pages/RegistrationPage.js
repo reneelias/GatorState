@@ -100,8 +100,8 @@ class RegistrationPage extends Component {
                     </div>
 {/* terms of service checkbox */}
                      <div className={'form-group' + (submitted ? ' has-error' : '')}>
-                        <label htmlFor="TOS">I have read the Terms of Service.</label>
-                        <input type="checkbox" className="form-control" name="TOS" onChange={this.handleChange} />
+                        <label htmlFor="TOS"></label>
+                        <input type="checkbox" className="form-control" name="TOS" onChange={this.handleChange} >I have read the Terms of Service.</input>
                         {submitted && !user.TOS &&
                             <div className="help-block">*required</div>
                         }
