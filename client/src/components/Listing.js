@@ -11,6 +11,9 @@ class Listing extends Component {
     todos: [],
   };
 
+  listingCardClicked = e => {
+    alert('Clicked')
+  }
 
   //In this render method we map the todos array to another component that extracts
   //the info and displays them in a card

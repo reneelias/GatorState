@@ -11,7 +11,7 @@ class FilterSelection extends Component {
 
         this.state = {
             value: "",
-            title: 'Houseing Type'
+            title: 'Housing Type'
         };
 
     }
