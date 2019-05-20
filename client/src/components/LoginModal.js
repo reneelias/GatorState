@@ -17,16 +17,16 @@ class LoginModal extends Component {
   
     render() {
       let lgClose = () => this.setState({ lgShow: false });
-      let regClose = () => this.setState({ regShow: false });
+      // let regClose = () => this.setState({ regShow: false });
   
       return (
         <ButtonToolbar>
           <Button onClick={() => this.setState({ lgShow: true })}>
             Login
           </Button>&nbsp;
-          <Button onClick={() => this.setState({ regShow: true })}>
+          {/* <Button onClick={() => this.setState({ regShow: true })}>
             Register 
-          </Button>
+          </Button> */}
   
           <Modal
             show={this.state.lgShow}
@@ -41,7 +41,7 @@ class LoginModal extends Component {
             <Modal.Body> <LoginPage/> </Modal.Body>
           </Modal>
   
-          <Modal
+          {/* <Modal
             show={this.state.regShow}
             onHide={regClose}
             aria-labelledby="example-modal-sizes-title-lg"
@@ -52,7 +52,7 @@ class LoginModal extends Component {
               </Modal.Title>
             </Modal.Header>
             <Modal.Body> <RegistrationPage /> </Modal.Body>
-          </Modal>
+          </Modal> */}
         </ButtonToolbar>
       );
     }

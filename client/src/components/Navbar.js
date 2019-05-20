@@ -4,6 +4,7 @@ import Search from './Search';
 import Nav from 'react-bootstrap/Nav';
 import { NavButton } from './styled';
 import LoginModal from './LoginModal';
+import RegisterModal from './RegisterModal';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 // import  {userReducer}  from './redux/reducers/userReducer'
@@ -54,10 +55,17 @@ class NavbarComp extends Component {
         </Nav>
           <Search />
           <Nav>
-           <LinkButton to="/uploadlistings" style={{ textDecoration: 'none', color: 'white' }}>Post</LinkButton>&nbsp;
 
+            {/* Post Button */}
+           <LinkButton to="/uploadlistings" style={{ textDecoration: 'none', color: 'white' }}>Post</LinkButton>&nbsp;
+           {/* Messages Button */}
             {this.props.loggedIn ? <div><NavButton>Messages</NavButton><Link to="/viewListings">
-            <NavButton  to="/viewListings">My Listings</NavButton></Link><Link to="/"><NavButton onClick={(e) => { this.logout() }}>Logout</NavButton></Link></div> : <LoginModal />}
+            {/* My Listings Button */}
+            <NavButton  to="/viewListings">My Listings</NavButton></Link><Link to="/">
+            {/* Login Button */}
+            <NavButton onClick={(e) => { this.logout() }}>Logout</NavButton></Link></div> : <LoginModal />}
+            {/* Register Button */}
+            <RegisterModal/>
           </Nav>
         </Navbar>
       </div>

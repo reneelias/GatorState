@@ -15,6 +15,18 @@ export const UploadListingButton = styled.button`
   font-size: 16px;
 `;
 
+export const MessageBackground = styled.div`
+    
+    background:rgb(204, 222, 252);
+    margin: auto;
+    opacity: .9;
+    width: 45%;
+    border: 5px solid;
+    border-color:white;
+    position:relative;
+    
+`
+
 const Title = styled.h1`
     margin: auto;
     text-align:center;
@@ -39,6 +51,7 @@ class UploadListing extends Component {
       }
     render(){
         return(
+           
             <div>
                 <Navbar/>
                     <div align="center"> 
@@ -48,6 +61,8 @@ class UploadListing extends Component {
                         <div class="form-group" style={{ width: '40%' }} align="left">
                             <label for="inputAddress" >Address</label>
                             <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"></input>
+                            <small id="photo" class="form-text text-muted" align="left">Required</small>
+
                         </div>
                         <div class="form-group" style={{ width: '40%' }} align="left">
                             <label for="inputAddress2">Address 2</label>
@@ -91,27 +106,37 @@ class UploadListing extends Component {
                             </div>
                         </div> */}
                          <div class="form-row"style={{ width: '40%' }} align="left">
-                        <div class="form-group" style={{ width: '40%' }} align="left">
-                            <label for="inputAddress" >Rent</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="$.."></input>
+                          <div class="form-col" style={{ width: '40%' }} align="left">
+                            <label for="inputAddress" >Price</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="$..per month"></input>
+                            <small id="photo" class="form-text text-muted" align="left">Required</small>
+
                         </div>&nbsp;
 
-                        <div class="form-group"style={{ width: '40%' }} align="left">
+                        <div class="form-col"style={{ width: '40%' }} align="left">
                             <label for="exampleFormControlSelect1">Listing Type</label>
                                 <select class="form-control" id="exampleFormControlSelect1">
+                                <option>Select...</option>
                                 <option>Apartment</option>
                                 <option>House</option>
                                 <option>Dorm</option>
                                 </select>
-                            </div>
-                            </div>
+                                <small id="photo" class="form-text text-muted" align="left">Required</small>
 
+                            </div>
+                            </div>
+                        
                         <div class="form-group"style={{ width: '40%' }} align="left">
+                            <p> </p>
+                            <p> </p>
                             <label for="uploadphotos">Upload Photos</label>
                             <input type="file" class="form-control-file" id="uploadphotos"></input>
                             <small id="photo" class="form-text text-muted" align="left">Upload photos of your listing.</small>
 
                         </div>
+
+                        <h4>Details</h4>
+
 
                         <div class="form-check" style={{ width: '40%' }} align="left">
                             <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></input>
@@ -140,20 +165,21 @@ class UploadListing extends Component {
                         </div>
 
                         <div class="form-group"style={{ width: '40%' }} align="left">
+                            <p> </p>
                             <label for="description" >Description</label>
                             <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Lorem ipsum..." rows="3"></textarea>
                         </div>
 
-                        <button class="btn btn-primary" type="submit">Submit form</button>
+                        {/* <button class="btn btn-primary" type="submit">Submit form</button> */}
+                        <UploadListingButton type="submit">Upload Listing</UploadListingButton>
 
                         
                     </form>
                     </div>
                     
-                    {/* <UploadListingButton>Upload Listing</UploadListingButton> */}
 
             </div>
-         </div>            
+         </div> 
         )
     }
 }
