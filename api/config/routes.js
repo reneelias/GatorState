@@ -7,7 +7,7 @@ const secret = process.env.JWT_SECRET || 'secret';
 module.exports = app => {
   app.post('/users', users.create);
   app.post('/sessions', users.login);
-  // app.use(verifyToken);
+  app.use(verifyToken);
   app.get('/user', users.verify);
   app.get('/listings', listings.index);
   app.get('/listings/:id', listings.grabListing);

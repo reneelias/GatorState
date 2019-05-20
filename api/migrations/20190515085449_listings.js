@@ -1,12 +1,6 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('listings', table => {
     table.increments();
-    table
-      .integer('user_id')
-      .references('id')
-      .inTable('users')
-      .index()
-      .onDelete('CASCADE');
     table.string('street_address');
     table.string('city');
     table.integer('zip_code');

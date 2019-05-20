@@ -7,8 +7,8 @@ module.exports = {
       page = Number(req.query.page);
     }
     knex('listings')
-      .offset((page - 1) * 10)
       .limit(10)
+      .offset(parseInt(page - 1) * 10)
       .then(results => {
         res.json(results);
       })
@@ -46,7 +46,7 @@ module.exports = {
       .where('listings.id', req.params.id)
       // .first()
       .then(results => {
-        res.json(results);
+        res.json(results[0]);
       })
       .catch(err => {
         res.status(400).send({ message: err });

@@ -6,7 +6,7 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex('listings').insert([
         {
-          user_id: 2,
+          // user_id: 2,
           street_address: '156 Park View Ave',
           city: 'San Francisco',
           zip_code: 94014,
@@ -19,7 +19,7 @@ exports.seed = function(knex, Promise) {
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim illum provident accusamus error alias voluptate sed saepe. Repellendus similique distinctio itaque maiores deleniti sit tenetur odio est ad, officiis quibusdam!'
         },
         {
-          user_id: 1,
+          // user_id: 1,
           street_address: '15 Stratford Dr',
           city: 'San Francisco',
           zip_code: 94132,
@@ -32,7 +32,7 @@ exports.seed = function(knex, Promise) {
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim illum provident accusamus error alias voluptate sed saepe. Repellendus similique distinctio itaque maiores deleniti sit tenetur odio est ad, officiis quibusdam!'
         },
         {
-          user_id: 3,
+          // user_id: 3,
           street_address: '263 Ralston St',
           city: 'San Francisco',
           zip_code: 94132,
