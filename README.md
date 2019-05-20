@@ -4,6 +4,7 @@
 The purpose of this project is to create a website for SFSU students to use in order to find housing around campus. In this project, we use HTML/CSS and Javascript packages such as Node, Express, and React to streamline the production process.
 
 # The Team
+- Team Lead: Rowvin Dizon
 - Front End Lead: Jonathan Gurdal
 - Front End: Daisy Sun
 - Back End Lead: Marlon Johnson
