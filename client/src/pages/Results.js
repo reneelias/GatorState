@@ -128,15 +128,7 @@ class Results extends Component {
         <Container fluid >
           <Row style={{ background: "#AADAFF" }}>
             <Col className="px-0">
-            
-            {this.state.searchState === 'AUTHENTICATED' &&
-              this.state.todos.length !== 0 && 
-              <MapContainer address={this.state.todos[0].address}/>
-              
-            }
-            </Col>
-            <Col className="px-0" >
-              <div>
+            <div>
                 {this.state.searchState === 'LOADING' &&
                   <div><h1>Loading Listings</h1>
                   </div>}
@@ -153,6 +145,14 @@ class Results extends Component {
                   <div>No results</div>
                 }
               </div>
+            </Col>
+            <Col className="px-0" >
+
+              {this.state.searchState === 'AUTHENTICATED' &&
+              this.state.todos.length !== 0 && 
+              <MapContainer address={this.state.todos[0].address}/>
+              }
+              
             </Col>
           </Row>
         </Container>

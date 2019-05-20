@@ -88,7 +88,7 @@ class RegistrationPage extends Component {
                         <label htmlFor="username">Username</label>
                         <input type="text" className="form-control" name="username" value={user.username} onChange={this.handleChange} />
                         {submitted && !user.username &&
-                            <div className="help-block" stylecolor="red">*Username is required</div>
+                            <div className="help-block">*Username is required</div>
                         }
                     </div>
                     <div className={'form-group' + (submitted && !user.password ? ' has-error' : '')}>
