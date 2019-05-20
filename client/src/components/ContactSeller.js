@@ -34,10 +34,12 @@ class ContactSeller extends Component{
                 <input type="password" class="form-control" id="inputPassword3" placeholder="Subject"></input>
                 </div>
             </div>
-            <div class="form-group" align="left">
+
+            
+            <div class="form-group" align="left" >
                 <p> </p>
                 <label for="description" >Message: </label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Lorem ipsum..." rows="3"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Lorem ipsum..." rows="25"></textarea>
              </div>
             <button class="btn btn-primary" type="submit">Send Message</button>
 

@@ -23,6 +23,7 @@ class ContactModal extends Component {
           </Button>
   
           <Modal
+            size= "lg"
             show={this.state.regShow}
             onHide={regClose}
             aria-labelledby="example-modal-sizes-title-sm"
