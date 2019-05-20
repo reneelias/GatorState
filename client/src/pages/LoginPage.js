@@ -110,13 +110,13 @@ class LoginPage extends Component {
                     <div className={'form-group' + (submitted && !username ? ' has-error' : '')}>
                         <input type="text" placeholder="Username" className="form-control" name="username" value={username} onChange={this.handleChange} />
                         {submitted && !username &&
-                            <div className="help-block">*Username is required</div>
+                            <div className="help-block"style={{color:'red'}}>*Username is required</div>
                         }
                     </div>
                     <div className={'form-group' + (submitted && !password ? ' has-error' : '')}>
                         <input type="password" placeholder="Password" className="form-control" name="password" value={password} onChange={this.handleChange} />
                         {submitted && !password &&
-                            <div className="help-block">*Password is required</div>
+                            <div className="help-block"style={{color:'red'}}>*Password is required</div>
                         }
                     </div>
                     <div className="form-group">
