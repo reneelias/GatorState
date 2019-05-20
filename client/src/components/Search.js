@@ -63,11 +63,13 @@ class Search extends Component {
               <FilterSelection />
             </InputGroup.Prepend>
             <FormControl
-              style={{width:'300px'}}
-              placeholder="Search by address, zipcode, or city..."
-              onChange={e => {
-                this.props.updateSearch(e.target.value);
+                style={{width:'300px'}}
+                maxLength="50" 
+                placeholder="Search by address, zipcode, or city..."
+                onChange={e => {
+                  this.props.updateSearch(e.target.value);  
               }}
+                
             />
             <InputGroup.Append>
               <LinkButton to="/results" onClick={(e) => { this.onSearchButtonClick() }} style={{ textDecoration: 'none', color: 'white' }}>Search</LinkButton>
