@@ -59,7 +59,10 @@ export const Message = styled.h2`
     text-align: center;
     color: white;
     font-family: Coustard;
-    
+`
+export const Disclaimer = styled.h5`
+    margin: auto;
+    text-align:center;
 `
 //Navbar
 export const NavButton = styled.button`

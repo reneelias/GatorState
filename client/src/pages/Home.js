@@ -5,6 +5,7 @@ It will show this route when there's no specified path.
 import React, { Component } from 'react';
 
 import Navbar from '../components/Navbar';
+
 import { Greeting, MessageBackground, Title, Message } from '../components/styled';
 import styled from "styled-components";
 
@@ -16,6 +17,11 @@ const Disclaimer = styled.h5`
     margin: auto;
     text-align:center;
 `
+
+import {Greeting,MessageBackground,Title,Message,Disclaimer} from '../components/styled';
+
+
+
 
 class Home extends Component {
     componentDidMount() {

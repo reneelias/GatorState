@@ -3,6 +3,12 @@ import Navbar from 'react-bootstrap/Navbar';
 import Search from './Search';
 import Nav from 'react-bootstrap/Nav';
 import { NavButton } from './styled';
+import {NavButton} from './styled';
+import Register from './Register';
+import LoginModal from './LoginModal';
+import Register from './Register';
+import styled from 'styled-components';
+import Nav from 'react-bootstrap/Nav';
 import LoginModal from './LoginModal';
 import RegisterModal from './RegisterModal';
 import { connect } from 'react-redux';
@@ -10,7 +16,6 @@ import { Link } from 'react-router-dom';
 // import  {userReducer}  from './redux/reducers/userReducer'
 import { logoutUser } from '../components/redux/actions/userActions';
 import styled from 'styled-components';
-
 
 
 const LinkButton = styled(Link)`
@@ -28,6 +33,20 @@ const LinkButton = styled(Link)`
   background: rgb(0, 123, 255);
 }
 `
+
+const NavButton = styled.button`
+  display: inline-block;
+  font-size: 1em;
+  color: white;
+  background: rgb(0, 123, 255);
+  border: none;
+  border-radius: 3px;
+  font: sans serif;
+  text-align: center;
+  line-height: 36px;
+`
+
+
 class NavbarComp extends Component {
 
   logout = e => {
