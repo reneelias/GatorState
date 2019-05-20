@@ -7,15 +7,9 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import MapContainer from '../components/Map';
 import axios from 'axios';
-import styled from 'styled-components';
+import {ResultText} from '../components/styled';
+import { updateSearch, finishedSearch, submittedSearch } from '../components/redux/actions/searchActions';
 
-import { updateSearch } from '../components/redux/actions/searchActions';
-
-const ResultText = styled.h1`
-  font-size: 1.5em;
-  text-align:center;
-
-`
 
 class Results extends Component {
   state = {
@@ -30,19 +24,38 @@ class Results extends Component {
   componentDidMount() {
     this.authenticate();
   }
+  
 
   authenticate = async () => {
     this.setState({
-      searchState: 'LOADING'
+      searchState: 'LOADING',
+      searchInput: this.props.searchValue
     });
 
     var urlString;
-    if (this.props.searchInput === "" || this.props.searchInput === null) {
+    const searchInput = this.props.searchValue;
+
+
+    // urlString = `http://gatorstate.tk/api/listings`;
+
+    if (searchInput === "" || searchInput === null || searchInput === undefined) {
+        urlString = `http://gatorstate.tk/api/listings`;
+    //   urlString = `http://localhost:5000/listings`;
+    }
+     else {
+         urlString = `http://gatorstate.tk/api/listingsSearch/${this.props.searchValue}`
+     }
+    // urlString = `http://localhost:5000/listings`;
+
+    if (searchInput === "" || searchInput === null || searchInput === undefined) {
       urlString = `http://gatorstate.tk/api/listings`;
+      // urlString = `http://localhost:5000/listings`;
     }
     else {
-      urlString = `http://gatorstate.tk/api/listingsSearch/${this.props.searchValue}`
+      urlString = `http://gatorstate.tk/api/listingsSearch/${searchInput}`
+      // urlString = `http://localhost:5000/listingsSearch/${searchInput}`;
     }
+
     await axios
       .get(urlString)
       .then(response => {
@@ -51,6 +64,9 @@ class Results extends Component {
         console.log(response);
         console.log(response.data);
         var i = 1;
+        this.setState({
+          todos: []
+        });
 
         if (resData[0].street_address != null) {
           (resData).forEach(element => {
@@ -59,9 +75,11 @@ class Results extends Component {
               address: `${element.street_address}, ${element.zip_code}`,
               zipcode: element.zip_code,
               price: element.price,
-              distance: 3,
+              city: element.city,
               date: '4/27/2019',
-              imgurl: `${element.images}`
+              imgurl: `${element.image_url}`,
+              homeType: element.home_type,
+              description: element.description,
             })
             i++;
 
@@ -75,6 +93,7 @@ class Results extends Component {
           });
           console.log('Stuffs was authenticated');
           console.log(this.state.todos);
+
         }
         else {
           this.setState({
@@ -89,11 +108,19 @@ class Results extends Component {
           searchState: 'DENIED'
         });
       });
+
+      this.props.finishedSearch();
+      // this.props.searchState = 'SEARCH_FINISHED';
   };
 
   render() {
+    if(this.props.searchState === 'SEARCH_SUBMITTED' && this.state.searchState !== 'LOADING')
+    {
+        this.authenticate();
+    }
 
-
+    console.log('Search State:')
+    console.log(this.props.searchState)
     return (
       <div>
         {/* {this.state.authenticate} */}
@@ -101,22 +128,16 @@ class Results extends Component {
         <Container fluid >
           <Row style={{ background: "#AADAFF" }}>
             <Col className="px-0">
-            {this.state.searchState === 'AUTHENTICATED' &&
-              this.state.todos.length != 0 && 
-              <MapContainer address={this.state.todos[0].address}/>
-            }
-            </Col>
-            <Col className="px-0" >
-              <div>
+            <div>
                 {this.state.searchState === 'LOADING' &&
                   <div><h1>Loading Listings</h1>
                   </div>}
                 {this.state.searchState === 'AUTHENTICATED' &&
                   <div>
                     <ResultText>
-                       Number of results: {this.state.resultsTotal}
+                      Number of results: {this.state.resultsTotal}
                     </ResultText>
-                    
+
                     <Listing todos={this.state.todos} />
                   </div>
                 }
@@ -124,6 +145,14 @@ class Results extends Component {
                   <div>No results</div>
                 }
               </div>
+            </Col>
+            <Col className="px-0" >
+
+              {this.state.searchState === 'AUTHENTICATED' &&
+              this.state.todos.length !== 0 && 
+              <MapContainer todos={this.state.todos}/>
+              }
+              
             </Col>
           </Row>
         </Container>
@@ -135,12 +164,15 @@ class Results extends Component {
 const mapStateToProps = state => {
   // console.log(state);
   return {
-    searchValue: state.searchReducer.searchValue
+    searchValue: state.searchReducer.searchValue,
+    searchState: state.searchReducer.searchState
   };
 };
 
 const mapDispatchToProps = {
-  updateSearch
+  updateSearch,
+  finishedSearch,
+  submittedSearch
 };
 
 export default connect(
