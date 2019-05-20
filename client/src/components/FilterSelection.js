@@ -3,17 +3,24 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 
 class FilterSelection extends Component {
-    constructor(props, context){
-        super(props, context);
-
+    
+    constructor(props){
+        super(props);
+        this.onTargetSelect = this.onTargetSelect.bind(this);
         this.handleChange = this.handleChange.bind(this);
 
         this.state = {
-            value: ""
+            value: "",
+            title: 'Housing Type'
         };
+
     }
-    handleChange(value, event){
-        this.setState({value});
+    onTargetSelect(target){
+        this.setState({title: target});
+
+    }
+    handleChange = () => {
+        this.setState();
     }
 
     render(){
@@ -21,12 +28,11 @@ class FilterSelection extends Component {
             <DropdownButton
                 type="checkbox"
                 value={this.state.value}
-                onChange={this.handleChange}
-                title="Listing Type"
+                title={this.state.title}
             >
-                <Dropdown.Item value={"apartment"}>Apartment</Dropdown.Item>
-                <Dropdown.Item value={"house"}>House</Dropdown.Item>
-                <Dropdown.Item value={"dorm"}>Dorm</Dropdown.Item>
+                <Dropdown.Item value={"apartment"} onSelect={()=> this.onTargetSelect("Apartment")}>Apartment</Dropdown.Item>
+                <Dropdown.Item value={"house"} onSelect={()=> this.onTargetSelect("House")}>House</Dropdown.Item>
+                <Dropdown.Item value={"dorm"} onSelect={()=> this.onTargetSelect("Dorm")}>Dorm</Dropdown.Item>
             </DropdownButton>
         );
     }

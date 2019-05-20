@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Navbar from '../components/Navbar';
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 
 export const UploadListingButton = styled.button`
@@ -49,7 +51,44 @@ class UploadListing extends Component {
         // alert('A name was submitted: ' + this.state.value);
         event.preventDefault();
 
-        alert('You done submitted')
+        console.log('You done submitted')
+        alert('SUBMITTED')
+    }
+
+    submitButtonClick = async (e) => {
+        var urlString = `http://gatorstate.tk/api/listings`;
+
+        const address = document.getElementById('inputAddress').value + document.getElementById('inputAddress2').value;
+        const city = document.getElementById('city').value
+        const state = document.getElementById('state').value
+        const zip = document.getElementById('zip').value
+        const price = document.getElementById('price').value
+        const homeType = document.getElementById('homeType').value
+        const description = document.getElementById('description').value
+
+        if (address && city && state && zip && price && homeType && description) {
+
+            var listing = {
+                user_id: localStorage.getItem('userid'),
+                street_address: address,
+                city: city,
+                zip_code: zip,
+                state: state,
+                image_url: 'no image',
+                home_type: homeType,
+                price: price,
+                description: description
+            }
+
+            await axios.post(urlString, listing)
+                .then(function (response) {
+                    alert(response.data.message);
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
     }
 
 
@@ -127,7 +166,7 @@ class UploadListing extends Component {
                                         <option value="house">House</option>
                                         <option value="dorm">Dorm</option>
                                     </select>
-                                    <small id="photo" class="form-text text-muted" align="left">*Required</small>
+                                    <small id="photo" class="form-text text-muted"   align="left">*Required</small>
 
                                 </div>
                             </div>
@@ -177,7 +216,8 @@ class UploadListing extends Component {
                             </div>
 
                             {/* <button class="btn btn-primary" type="submit">Submit form</button> */}
-                            <UploadListingButton type="submit" onSubmit={this.handleSubmit}>Upload Listing</UploadListingButton>
+                            <Link to="/"><UploadListingButton type="submit" onClick={(e) => { this.submitButtonClick() }} >Upload Listing</UploadListingButton></Link>
+                            {/* onSubmit={this.handleSubmit} */}
                             <h1> </h1>
 
                         </form>
