@@ -62,7 +62,7 @@ class UploadListing extends Component {
                         <div class="form-group" style={{ width: '40%' }} align="left">
                             <label for="inputAddress" >Address</label>
                             <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"></input>
-                            <small id="photo" class="form-text text-muted" align="left">Required</small>
+                            <small id="photo" class="form-text text-muted" align="left">*Required</small>
 
                         </div>
                         <div class="form-group" style={{ width: '40%' }} align="left">
@@ -110,7 +110,7 @@ class UploadListing extends Component {
                           <div class="form-col" style={{ width: '40%' }} align="left">
                             <label for="inputAddress" >Price</label>
                             <input type="text" class="form-control" id="inputAddress" placeholder="$..per month"></input>
-                            <small id="photo" class="form-text text-muted" align="left">Required</small>
+                            <small id="photo" class="form-text text-muted" align="left">*Required</small>
 
                         </div>&nbsp;
 
@@ -122,7 +122,7 @@ class UploadListing extends Component {
                                 <option>House</option>
                                 <option>Dorm</option>
                                 </select>
-                                <small id="photo" class="form-text text-muted" align="left">Required</small>
+                                <small id="photo" class="form-text text-muted" align="left">*Required</small>
 
                             </div>
                             </div>

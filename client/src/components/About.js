@@ -79,7 +79,7 @@ class About extends Component{
                         </Col>
                         </Row>
                     </Container>
-                        <Container style={{flexDirection: 'column'}}> 
+                        <Container style={{flexDirection: 'column', width: '80%'}}> 
                      <Row style={{marginBottom: "10px"}}>
 
                     <Col>

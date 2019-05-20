@@ -56,31 +56,31 @@ class RegistrationPage extends Component {
                       <div className={'form-group' + (submitted && !user.firstName ? ' has-error' : '')}>
                           <input type="text" placeholder="First Name" className="form-control" name="firstName" value={user.firstName} onChange={this.handleChange} />
                           {submitted && !user.firstName &&
-                              <div className="help-block">*First Name is required</div>
+                              <div className="help-block" style={{color:'red'}}>*First Name is required</div>
                           }
                       </div>
                       <div className={'form-group' + (submitted && !user.lastName ? ' has-error' : '')}>
                           <input type="text" placeholder="Last Name" className="form-control" name="lastName" value={user.lastName} onChange={this.handleChange} />
                           {submitted && !user.lastName &&
-                              <div className="help-block">*Last Name is required</div>
+                              <div className="help-block"style={{color:'red'}}>*Last Name is required</div>
                           }
                       </div>
                       <div className={'form-group' + (submitted && !user.username ? ' has-error' : '')}>
                           <input type="text" placeholder="Username" className="form-control" name="username" value={user.username} onChange={this.handleChange} />
                           {submitted && !user.username &&
-                              <div className="help-block">*Username is required</div>
+                              <div className="help-block"style={{color:'red'}}>*Username is required</div>
                           }
                       </div>
                       <div className={'form-group' + (submitted && !user.password ? ' has-error' : '')}>
                           <input type="password" placeholder="Password" className="form-control" name="password" value={user.password} onChange={this.handleChange} />
                           {submitted && !user.password &&
-                              <div className="help-block">*Password is required</div>
+                              <div className="help-block" style={{color:'red'}}>*Password is required</div>
                           }
                       </div>
 
                     <div class="custom-control custom-checkbox mb-3">
                         <input type="checkbox" class="custom-control-input" id="customControlValidation1" required></input>
-                        <label class="custom-control-label" for="customControlValidation1">Accept Terms of Service</label>
+                        <label class="custom-control-label" for="customControlValidation1">I Accept Terms of Service</label>
                         <div class="invalid-feedback"> Invalid feedback </div>
                     </div>
                       <div className="form-group">
