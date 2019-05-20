@@ -1,38 +1,8 @@
 import React, { Component } from 'react';
 import Navbar from '../components/Navbar';
-import styled from "styled-components";
+import {UploadListingButton} from '../components/styled';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-
-
-export const UploadListingButton = styled.button`
-  background-color: #4caf50; /* Green */
-  border: none;
-  border-radius: 10px;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-`;
-
-export const MessageBackground = styled.div`
-    
-    background:rgb(204, 222, 252);
-    margin: auto;
-    opacity: .9;
-    width: 45%;
-    border: 5px solid;
-    border-color:white;
-    position:relative;
-    
-`
-
-const Title = styled.h1`
-    margin: auto;
-    text-align:center;
-    `
 
 class UploadListing extends Component {
     constructor(props) {

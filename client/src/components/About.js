@@ -112,7 +112,7 @@ class About extends Component{
                     </Col>
                     <Col>
                         <Card >
-                            <Card.Header><Names>Back End</Names></Card.Header> 
+                            <Card.Header><Names>Full Stack</Names></Card.Header> 
                             <Card.Img variant="top" src="https://avatars2.githubusercontent.com/u/7273788?s=460&v=4"  />
                             <Names>Rene Elias</Names>
                             <Card.Footer>

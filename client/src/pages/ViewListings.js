@@ -101,7 +101,7 @@ class ViewListings extends Component {
 
                             {this.state.searchState === 'AUTHENTICATED' &&
                                 this.state.todos.length !== 0 &&
-                                <MapContainer address={this.state.todos[0].address} />
+                                <MapContainer todos={this.state.todos} />
 
                             }
                         </Col>
