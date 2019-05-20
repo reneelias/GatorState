@@ -6,12 +6,13 @@ import ListGroupItem from 'react-bootstrap/ListGroupItem';
 import CardColumns from 'react-bootstrap/CardColumns';
 import styled from 'styled-components';
 
-const Names = styled.h1`
+const Names = styled.h3`
     text-align:center;
 `
 
 
-class About extends Component{
+class About extends Component{    
+
     render(){
         return(
             <CardColumns >

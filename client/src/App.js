@@ -6,7 +6,7 @@ import Results from '../src/pages/Results';
 import LoginPage from '../src/pages/LoginPage';
 import RegistrationPage from '../src/pages/RegistrationPage';
 import ViewListings from '../src/pages/ViewListings'
-import UploadListings from '../src/pages/UploadListing/UploadListing';
+import UploadListings from '../src/pages/UploadListing';
 import Navbar from 'react-bootstrap/Navbar';
 
 class App extends Component {
