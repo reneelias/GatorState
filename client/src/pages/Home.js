@@ -18,7 +18,7 @@ const Disclaimer = styled.h5`
     text-align:center;
 `
 
-import {Greeting,MessageBackground,Title,Message,Disclaimer} from '../components/styled';
+//import {Greeting,MessageBackground,Title,Message,Disclaimer} from '../components/styled';
 
 
 

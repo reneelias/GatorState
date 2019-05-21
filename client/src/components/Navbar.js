@@ -2,13 +2,8 @@ import React, { Component } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Search from './Search';
 import Nav from 'react-bootstrap/Nav';
-import { NavButton } from './styled';
 import {NavButton} from './styled';
 import Register from './Register';
-import LoginModal from './LoginModal';
-import Register from './Register';
-import styled from 'styled-components';
-import Nav from 'react-bootstrap/Nav';
 import LoginModal from './LoginModal';
 import RegisterModal from './RegisterModal';
 import { connect } from 'react-redux';
@@ -34,17 +29,17 @@ const LinkButton = styled(Link)`
 }
 `
 
-const NavButton = styled.button`
-  display: inline-block;
-  font-size: 1em;
-  color: white;
-  background: rgb(0, 123, 255);
-  border: none;
-  border-radius: 3px;
-  font: sans serif;
-  text-align: center;
-  line-height: 36px;
-`
+// const NavButton = styled.button`
+//   display: inline-block;
+//   font-size: 1em;
+//   color: white;
+//   background: rgb(0, 123, 255);
+//   border: none;
+//   border-radius: 3px;
+//   font: sans serif;
+//   text-align: center;
+//   line-height: 36px;
+// `
 
 
 class NavbarComp extends Component {

@@ -4,7 +4,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 import styled from 'styled-components'
 import { Link } from 'react-router-dom';
-import { withRouter } from 'react-router';
+//import { withRouter } from 'react-router';
 import FilterSelection from './FilterSelection';
 
 import { connect } from 'react-redux';
