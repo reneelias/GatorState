@@ -185,8 +185,8 @@ class UploadListing extends Component {
                                 <textarea class="form-control" id="description" placeholder="Lorem ipsum..." rows="3"></textarea>
                             </div>
 
-                            {/* <button class="btn btn-primary" type="submit">Submit form</button> */}
-                            <Link to="/"><UploadListingButton type="submit" onClick={(e) => { this.submitButtonClick() }} >Upload Listing</UploadListingButton></Link>
+                            <button class="btn btn-primary" type="submit">Upload Listing</button>
+                            {/* <Link to="/"><UploadListingButton type="submit" onClick={(e) => { this.submitButtonClick() }} >Upload Listing</UploadListingButton></Link> */}
                             {/* onSubmit={this.handleSubmit} */}
                             <h1> </h1>
 
