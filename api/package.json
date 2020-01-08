@@ -34,7 +34,7 @@
   "homepage": "https://github.com/CSC-648-SFSU/csc648-sp19-Team06#readme",
   "dependencies": {
     "@reach/router": "^1.2.1",
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.5",
     "bcrypt": "^3.0.6",
