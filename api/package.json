@@ -47,7 +47,7 @@
     "google-map-react": "^1.1.4",
     "jade": "^1.11.0",
     "jsonwebtoken": "^8.5.1",
-    "knex": "^0.16.5",
+    "knex": "^0.19.5",
     "petfinder-client": "^1.0.1",
     "pg": "^7.9.0",
     "pug": "^2.0.3",
